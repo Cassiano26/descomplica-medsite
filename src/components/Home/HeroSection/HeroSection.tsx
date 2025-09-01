@@ -2,7 +2,8 @@
 
 import { useMediaQuery, useTheme } from "@mui/material";
 import { MobileHero } from "./MobileHero";
-import { DesktopHero } from "./DesktopHero";
+import DesktopHero from "./DesktopHero";
+
 
 export const HeroSection = () => {
   const theme = useTheme();

@@ -1,0 +1,32 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base mobile-first */
+html, body {
+  min-height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #000C1E 0%, #000C1E 100%);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mantém a cor do texto por padrão em branco */
+main {
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Remove estilos padrão de botão no mobile */
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

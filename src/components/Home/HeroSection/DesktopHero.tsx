@@ -1,78 +1,60 @@
 "use client";
 
-import { Box, Typography, Button, Stack } from "@mui/material";
-import Image from "next/image";
+import Grid from "@mui/material/Grid";
+import { Typography, Box, Button } from "@mui/material";
 
-export const DesktopHero = () => {
+const HeroSectionDesktop: React.FC = () => {
   return (
-    <Box
-      sx={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        alignItems: "center",
-        minHeight: "80vh",
-        px: 8,
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Coluna Esquerda - Texto */}
-      <Stack spacing={3} zIndex={2}>
-        <Typography
-          variant="h3"
-          fontWeight="bold"
-          sx={{ color: "primary.main" }}
-        >
-          Conectando a saúde pública ao futuro!
-        </Typography>
+    <Box sx={{ px: { xs: 4, sm: 8, md: 12 }, py: 10 }}>
+      <Grid container spacing={6} alignItems="center">
+        {/* Texto */}
+        <Grid item xs={12} md={6}>
+          <Typography
+            variant="h3"
+            component="h1"
+            fontWeight="bold"
+            gutterBottom
+          >
+            Conectando a saúde pública ao futuro!
+          </Typography>
+          <Typography variant="h6" component="p" gutterBottom>
+            Mais especialistas, menos filas: sua cidade inovando na saúde
+            pública!
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{
+              mt: 3,
+              borderRadius: 3,
+              backgroundColor: "#04D77B",
+              color: "#000C1E",
+              fontWeight: "bold",
+              px: 4,
+              py: 1.5,
+              fontSize: "1.1rem",
+              "&:hover": { backgroundColor: "#03b36a" },
+            }}
+          >
+            Saiba mais!
+          </Button>
+        </Grid>
 
-        <Typography variant="h6" sx={{ maxWidth: 500 }}>
-          Mais especialistas, menos filas: sua cidade inovando na saúde pública!
-        </Typography>
-
-        <Button
-          variant="contained"
-          color="secondary"
-          sx={{ width: "fit-content", borderRadius: 3, px: 4 }}
-        >
-          Saiba mais!
-        </Button>
-      </Stack>
-
-      {/* Coluna Direita - Imagens */}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-        }}
-      >
-        {/* Ícone */}
-        <Image
-          src="/icone-descomplica.png"
-          alt="Ícone Descomplica"
-          width={120}
-          height={120}
-          style={{ position: "absolute", top: 50, left: -50 }}
-        />
-
-        {/* Médico */}
-        <Image
-          src="/medico-01.png"
-          alt="Médico com tablet"
-          width={400}
-          height={400}
-        />
-      </Box>
-
-      {/* Fundo topo */}
-      <Image
-        src="/fundo-topo.png"
-        alt="Fundo topo"
-        fill
-        style={{ zIndex: -1, objectFit: "cover" }}
-      />
+        {/* Imagem */}
+        <Grid item xs={12} md={6} textAlign="center">
+          <Box
+            component="img"
+            src="/medico-01.png"
+            alt="Médico com tablet"
+            sx={{
+              maxWidth: 400,
+              width: "100%",
+              height: "auto",
+            }}
+          />
+        </Grid>
+      </Grid>
     </Box>
   );
 };
+
+export default HeroSectionDesktop;

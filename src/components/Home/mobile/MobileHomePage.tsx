@@ -29,7 +29,7 @@ export const MobileHomePage: React.FC = () => {
         <img
           src="/descomplica-logo.png"
           alt="Descomplica logo"
-          style={{ position: "absolute", top: 16, left: 16, width: 80 }}
+          style={{ position: "absolute", top: 16, left: 16, width: 200 }}
         />
       </Box>
 
@@ -57,7 +57,7 @@ export const MobileHomePage: React.FC = () => {
         <img
           src="/medico-01.png"
           alt="Médico com tablet"
-          style={{ width: "100%", marginTop: 24 }}
+          style={{ width: "100%", marginTop: -40 }}
         />
       </Box>
 
@@ -87,11 +87,11 @@ export const MobileHomePage: React.FC = () => {
           sx={{
             backgroundImage: "linear-gradient(to right, #4703FB, #57B7EF)",
             borderRadius: "50px",
-            px: 3,
+            px: 10,
             py: 1,
             color: "white",
             display: "inline-block",
-            mb: 3,
+            mb: 10,
           }}
         >
           Como funciona?
@@ -99,7 +99,7 @@ export const MobileHomePage: React.FC = () => {
         <img
           src="/como-funciona.png"
           alt="Como funciona"
-          style={{ width: "100%", maxWidth: 320 }}
+          style={{ width: "100%", maxWidth: 220 }}
         />
         <Button
           variant="contained"
@@ -127,7 +127,7 @@ export const MobileHomePage: React.FC = () => {
             borderRadius: 3,
             p: 3,
             color: "white",
-            mt: 3,
+            mt: 10,
           }}
         >
           <StatBox target={40} label="menos encaminhamentos" />
@@ -141,7 +141,7 @@ export const MobileHomePage: React.FC = () => {
             mt: 3,
             borderRadius: 3,
             backgroundColor: "#04D77B",
-            color: "#000C1E",
+            color: "#ffffffff",
             fontWeight: "bold",
           }}
         >
@@ -177,7 +177,7 @@ export const MobileHomePage: React.FC = () => {
             px: 2,
             py: 1,
             fontWeight: "bold",
-            color: "#051f34",
+            color: "#ffffffff",
           }}
         >
           Clique aqui e agende já uma reunião!
