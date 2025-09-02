@@ -31,7 +31,8 @@ export const MobileHero = () => {
 
       <Stack spacing={2} alignItems="center">
         <Typography
-          variant="h5"
+        
+          variant="h1"
           fontWeight="bold"
           sx={{ color: "primary.main" }}
         >

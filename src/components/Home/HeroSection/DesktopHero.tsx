@@ -1,14 +1,26 @@
 "use client";
 
-import Grid from "@mui/material/Grid";
 import { Typography, Box, Button } from "@mui/material";
 
 const HeroSectionDesktop: React.FC = () => {
   return (
     <Box sx={{ px: { xs: 4, sm: 8, md: 12 }, py: 10 }}>
-      <Grid container spacing={6} alignItems="center">
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          gap: { xs: 4, md: 6 },
+        }}
+      >
         {/* Texto */}
-        <Grid item xs={12} md={6}>
+        <Box
+          sx={{
+            flex: 1,
+            textAlign: { xs: "center", md: "left" },
+            mb: { xs: 4, md: 0 },
+          }}
+        >
           <Typography
             variant="h3"
             component="h1"
@@ -37,22 +49,26 @@ const HeroSectionDesktop: React.FC = () => {
           >
             Saiba mais!
           </Button>
-        </Grid>
+        </Box>
 
         {/* Imagem */}
-        <Grid item xs={12} md={6} textAlign="center">
+        <Box
+          sx={{
+            flex: 1,
+            textAlign: "center",
+          }}
+        >
           <Box
             component="img"
             src="/medico-01.png"
             alt="Médico com tablet"
             sx={{
-              maxWidth: 400,
-              width: "100%",
+              maxWidth: "100%",
               height: "auto",
             }}
           />
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 };

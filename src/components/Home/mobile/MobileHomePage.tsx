@@ -1,232 +1,335 @@
 "use client";
 
-import { Box, Typography, Button, Stack } from "@mui/material";
+import { Box, Typography, Button, Stack, Link } from "@mui/material";
 import React from "react";
+import Image from "next/image";
 
-// Tipagem do StatBox
 interface StatBoxProps {
   target: number;
   label: string;
 }
 
-const StatBox: React.FC<StatBoxProps> = ({ target, label }) => {
-  return (
-    <Box textAlign="center" mb={3}>
-      <Typography variant="h4" fontWeight="bold" color="#04D77B">
-        {target}%
-      </Typography>
-      <Typography variant="body2">{label}</Typography>
-    </Box>
-  );
-};
+const StatBox: React.FC<StatBoxProps> = ({ target, label }) => (
+  <Box textAlign="center" p={2}>
+    <Typography variant="h4" fontWeight="bold" color="#04D77B">
+      {target}%
+    </Typography>
+    <Typography variant="body2">{label}</Typography>
+  </Box>
+);
+
+const steps = [
+  { icon: "/Inicio-da-consulta.png", text: "Início da consulta" },
+  { icon: "/Dadospaciente.png", text: "Inserção de dados do paciente" },
+  { icon: "/suporte-ia.png", text: "Sugestão de diagnóstico com suporte da I.A." },
+  { icon: "/apontamentos.png", text: "Recebimento de apontamentos do especialista" },
+  { icon: "/direcionamento.png", text: "Direcionamento do paciente" },
+  { icon: "/avaliacao.png", text: "Avaliação da consultoria" },
+  { icon: "/dashboard.png", text: "Dashboard para o gestor público" },
+];
 
 export const MobileHomePage: React.FC = () => {
   return (
-    <Box sx={{ display: { xs: "block", md: "none" }, px: 2, pb: 6 }}>
-      {/* Fundo e logo */}
-      <Box sx={{ position: "relative", mb: 4 }}>
-        <img src="/fundo-topo.png" alt="Fundo topo" style={{ width: "100%" }} />
-        <img
-          src="/descomplica-logo.png"
-          alt="Descomplica logo"
-          style={{ position: "absolute", top: 16, left: 16, width: 200 }}
-        />
+    <Box sx={{ display: { xs: "block", md: "none" }, background: "linear-gradient(180deg, #000C1E 60%)", color: "white" }}>
+      
+      {/* HERO SECTION */}
+      <Box sx={{ position: "relative", px: 2, pt: 2, pb: 10 }}>
+        <Box sx={{ position: "absolute", top: 30, left: 16 }}>
+          <Image
+            src="/descomplica-logo.png"
+            alt="Descomplica logo"
+            width={160}
+            height={30}
+            style={{ width: 140, height: "auto" }}
+          />
+        </Box>
+
+        <Box sx={{ pt: 12 }}>
+          <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ color: "rgba(255,255,255,0.88)", fontStyle: "italic" }}>
+            Conectando a saúde<br />
+            pública ao futuro!
+          </Typography>
+
+          <Typography variant="body1" gutterBottom sx={{ color: "#FFFFFF" }}>
+            Mais especialistas, menos<br />
+            filas:{" "}
+            <Box component="span" sx={{ color: "#FFFFFF", fontStyle: "italic", fontWeight: "bold" }}>
+              sua cidade inovando na <br />
+              saúde pública!
+            </Box>
+          </Typography>
+
+          <Button
+            variant="contained"
+            sx={{
+              mt: 3,
+              borderRadius: 3,
+              backgroundColor: "#04D77B",
+              color: "#000C1E",
+              fontWeight: "bold",
+              fontStyle: "italic",
+              textTransform: "none",
+              "&:hover": { backgroundColor: "#03b36a" },
+            }}
+          >
+            Saiba mais!
+          </Button>
+        </Box>
+
+        <Box sx={{ mt: -40, position: "relative", zIndex: 1 }}>
+          <Image
+            src="/icone-fundo.png"
+            alt="icone fundo"
+            width={300}
+            height={400}
+            style={{ width: "100%", height: "auto" }}
+          />
+        </Box>
+
+        <Box sx={{ mt: -70, position: "relative", zIndex: 1 }}>
+          <Image
+            src="/medico-01.png"
+            alt="Médico com tablet"
+            width={300}
+            height={400}
+            style={{ width: "100%", height: "auto" }}
+          />
+        </Box>
       </Box>
 
-      {/* Hero */}
-      <Box textAlign="left" mb={6}>
-        <Typography variant="h5" fontWeight="bold" gutterBottom>
-          Conectando a saúde pública ao futuro!
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Mais especialistas, menos filas: sua cidade inovando na saúde pública!
-        </Typography>
-        <Button
-          variant="contained"
-          sx={{
-            mt: 2,
-            borderRadius: 3,
-            backgroundColor: "#04D77B",
-            color: "#000C1E",
-            fontWeight: "bold",
-            "&:hover": { backgroundColor: "#03b36a" },
-          }}
-        >
-          Saiba mais!
-        </Button>
-        <img
-          src="/medico-01.png"
-          alt="Médico com tablet"
-          style={{ width: "100%", marginTop: -40 }}
-        />
-      </Box>
-
-      {/* Sobre */}
-      <Box mb={6}>
-        <Typography variant="body1" gutterBottom>
+      {/* ABOUT SECTION */}
+      <Box sx={{ px: 2, pb: 6 }}>
+        <Typography variant="h5" gutterBottom sx={{ color: "rgba(255,255,255,0.88)", lineHeight: 1.5 }}>
           Redução de custos e filas com triagens médicas inteligentes e comprovadas.{" "}
-          <b>A solução que transforma o atendimento público com inteligência artificial.</b>
+          <Box component="span" sx={{ color: "rgba(255,255,255,0.88)", fontStyle: "italic", fontWeight: "bold" }}>
+            A solução que transforma o atendimento público com inteligência artificial.
+          </Box>
         </Typography>
-        <Typography variant="body2" gutterBottom>
-          A <b>Descomplica Medicina</b> utiliza inteligência artificial generativa aliada à expertise médica
-          para otimizar o processo de encaminhamento. O resultado? Redução de filas,
-          economia de recursos e mais dignidade no atendimento.
+
+        <Typography variant="body2" gutterBottom sx={{ color: "rgba(255,255,255,0.88)", mt: 2 }}>
+          A <b>Descomplica Medicina</b> utiliza inteligência artificial generativa aliada à expertise médica para otimizar o processo de encaminhamento. O resultado?{" "}
+          <Box component="span" sx={{ color: "rgba(255,255,255,0.88)", fontStyle: "italic", fontWeight: "bold" }}>
+            Redução de filas, economia de recursos e mais dignidade no atendimento.
+          </Box>
         </Typography>
-        <img src="/computador-01.png" alt="Dashboard IA" style={{ width: "100%", margin: "20px 0" }} />
-        <Typography variant="body2">
-          Nossa plataforma oferece um <b>dashboard em tempo real</b>, que permite ao gestor visualizar
-          indicadores de desempenho, identificar gargalos e tomar decisões baseadas em dados —
-          tudo com foco na eficiência do sistema e no uso responsável dos recursos públicos.
+
+        <Box sx={{ my: 2 }}>
+          <Image
+            src="/computador-01.png"
+            alt="Dashboard IA"
+            width={400}
+            height={200}
+            style={{ width: "100%", height: "auto" }}
+          />
+        </Box>
+
+        <Typography variant="body2" sx={{ color: "#FFFFFF" }}>
+          Nossa plataforma oferece um{" "}
+          <Box component="span" sx={{ color: "#FFFFFF", fontStyle: "italic", fontWeight: "bold" }}>
+            dashboard em tempo real
+          </Box>
+          , que permite ao gestor visualizar indicadores de desempenho, identificar gargalos e tomar decisões baseadas em dados — tudo com foco na eficiência do sistema e no uso responsável dos recursos públicos.
         </Typography>
       </Box>
 
-      {/* Como funciona */}
-      <Box textAlign="center" mb={6}>
+      {/* COMO FUNCIONA SECTION */}
+      <Box sx={{ px: 3, py: 2 }}>
         <Typography
           variant="h6"
+          fontWeight="bold"
+          textAlign="right"
           sx={{
-            backgroundImage: "linear-gradient(to right, #4703FB, #57B7EF)",
-            borderRadius: "50px",
-            px: 10,
-            py: 1,
+            background: "linear-gradient(to right, #4703FB, #57B7EF)",
+            borderRadius: "30px",
+            px: 13,
+            py: 2,
             color: "white",
             display: "inline-block",
-            mb: 10,
+            mb: 6,
           }}
         >
           Como funciona?
         </Typography>
-        <img
-          src="/como-funciona.png"
-          alt="Como funciona"
-          style={{ width: "100%", maxWidth: 220 }}
-        />
-        <Button
-          variant="contained"
-          sx={{
-            mt: 2,
-            borderRadius: 3,
-            backgroundColor: "#04D77B",
-            color: "#000C1E",
-            fontWeight: "bold",
-          }}
-        >
-          Fale conosco
-        </Button>
+
+        <Box sx={{ px: 1 }}>
+          {steps.map((step, index) => (
+            <Box key={index} sx={{ display: "flex", alignItems: "center", position: "relative", mb: 6 }}>
+              {index !== steps.length - 1 && (
+                <Box sx={{ position: "absolute", left: "32px", top: "60px", bottom: "-50px", width: "2px", bgcolor: "#04D77B", opacity: 0.7 }} />
+              )}
+
+              <Box sx={{ width: 64, height: 64, borderRadius: "50%", border: "2px solid #04D77B", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, bgcolor: "#000C1E", zIndex: 2, mr: 2 }}>
+                <Image src={step.icon} alt={step.text} width={32} height={32} />
+              </Box>
+
+              <Typography variant="body1" sx={{ color: "white", flex: 1, pr: 2 }}>
+                {step.text}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+
+        <Box textAlign="center">
+          <Button variant="contained" sx={{ mt: 4, borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }}>
+            Fale conosco
+          </Button>
+        </Box>
       </Box>
 
-      {/* Resultados */}
-      <Box mb={6} textAlign="center">
-        <img src="/medicos-02.png" alt="Médicos" style={{ width: "100%", marginBottom: 16 }} />
-        <Typography variant="h6" gutterBottom>
-          <b>Resultados</b> que fazem a diferença!
-        </Typography>
-        <Box
-          sx={{
-            backgroundImage: "linear-gradient(to bottom, #004060, #04D77B)",
-            borderRadius: 3,
-            p: 3,
-            color: "white",
-            mt: 10,
-          }}
-        >
-          <StatBox target={40} label="menos encaminhamentos" />
-          <StatBox target={95} label="de aprovação entre os médicos" />
-          <StatBox target={10} label="de economia no orçamento da saúde" />
-          <StatBox target={50} label="menos exames desnecessários" />
-        </Box>
-        <Button
-          variant="contained"
-          sx={{
-            mt: 3,
-            borderRadius: 3,
-            backgroundColor: "#04D77B",
-            color: "#ffffffff",
-            fontWeight: "bold",
-          }}
-        >
+
+
+      {/*IMAGEM DOIS MEDICOS E TEXTO */}
+
+   <Box
+  sx={{
+    display: "flex",
+    flexDirection: { xs: "column", sm: "row" }, // coluna no mobile, linha em telas maiores
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 2,
+  }}
+>
+  {/* Texto */}
+  <Box sx={{ flex: 1, textAlign: "left" }}>
+    <Typography
+      variant="h5"
+      fontWeight="bold"
+      sx={{ color: "#FFFFFF", fontStyle: "italic", mb: 1 }}
+    >
+      Resultados que fazem a diferença!
+    </Typography>
+   
+  </Box>
+
+  {/* Imagem */}
+  <Box sx={{ flexShrink: 0, mt: { xs: 2, sm: 0 }, ml: { sm: 3 } }}>
+    <Image
+      src="/medicos-02.png"
+      alt="Médicos"
+      width={800}          // aumenta a largura base
+      height={460}         // ajusta a altura proporcional
+      style={{ width: "100%", maxWidth: 600, height: "auto" }}
+    />
+  </Box>
+</Box>
+
+
+
+      {/* RESULTADOS SECTION */}
+      <Box
+  sx={{
+    background: "linear-gradient(to bottom, #227cb0ff, #1fb976ff)",
+    borderRadius: 3,
+    p: 3,
+    color: "#FFFFFF", // garante que todos os textos dentro fiquem brancos
+    mt: 4,
+    maxWidth: 360,
+    mx: "auto",
+  }}
+>
+  <Stack spacing={2}>
+   <Box
+  sx={{
+    background: "linear-gradient(to bottom, #227cb0ff, #1fb976ff)",
+    borderRadius: 3,
+    p: 3,
+    color: "#FFFFFF", // garante que todos os textos fiquem brancos
+    mt: 4,
+    maxWidth: 360,
+    mx: "auto",
+  }}
+>
+  <Stack spacing={2}>
+    <Box sx={{ borderBottom: "1px solid rgba(255,255,255,0.7)", py: 2, textAlign: "center" }}>
+      <Typography variant="h4" sx={{ fontWeight: "bold", fontStyle: "italic", fontSize: "3rem", color: "#FFFFFF" }}>
+        40%
+      </Typography>
+      <Typography variant="body1" sx={{ color: "#FFFFFF" }}>menos encaminhamentos</Typography>
+    </Box>
+
+    <Box sx={{ borderBottom: "1px solid rgba(255,255,255,0.7)", py: 2, textAlign: "center" }}>
+      <Typography variant="h4" sx={{ fontWeight: "bold", fontStyle: "italic", fontSize: "3rem", color: "#FFFFFF" }}>
+        95%
+      </Typography>
+      <Typography variant="body1" sx={{ color: "#FFFFFF" }}>de aprovação entre os médicos</Typography>
+    </Box>
+
+    <Box sx={{ borderBottom: "1px solid rgba(255,255,255,0.7)", py: 2, textAlign: "center" }}>
+      <Typography variant="h4" sx={{ fontWeight: "bold", fontStyle: "italic", fontSize: "3rem", color: "#FFFFFF" }}>
+        10%
+      </Typography>
+      <Typography variant="body1" sx={{ color: "#FFFFFF" }}>de economia no orçamento da saúde</Typography>
+    </Box>
+
+    <Box sx={{ py: 2, textAlign: "center" }}>
+      <Typography variant="h4" sx={{ fontWeight: "bold", fontStyle: "italic", fontSize: "3rem", color: "#FFFFFF" }}>
+        50%
+      </Typography>
+      <Typography variant="body1" sx={{ color: "#FFFFFF" }}>menos exames desnecessários</Typography>
+    </Box>
+  </Stack>
+</Box>
+
+  </Stack>
+</Box>
+
+      <Box textAlign="center" sx={{ mt: 10 }}>
+        <Button variant="contained" sx={{ borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }}>
           Entre já em contato!
         </Button>
       </Box>
 
-      {/* CTA com imagem do médico */}
-      <Box sx={{ position: "relative", mb: 6 }}>
-        <img src="/medico-texto.png" alt="Medico Texto" style={{ width: "100%" }} />
-        <Box
-          sx={{
-            position: "absolute",
-            top: 16,
-            left: 16,
-            backgroundColor: "white",
-            borderRadius: "20px",
-            px: 2,
-            py: 1,
-            fontStyle: "italic",
-            fontWeight: "600",
-          }}
-        >
-          Pronto para transformar o atendimento público de saúde?
-        </Box>
-        <Box
-          sx={{
-            position: "absolute",
-            top: 140,
-            left: 16,
-            backgroundColor: "#04D77B",
-            borderRadius: "12px",
-            px: 2,
-            py: 1,
-            fontWeight: "bold",
-            color: "#ffffffff",
-          }}
-        >
-          Clique aqui e agende já uma reunião!
+      {/* CTA IMAGE */}
+      <Box sx={{ position: "relative", mb: 6, bgcolor: "#000C1E", px: 2, pt: 4, pb: 8, textAlign: "center" }}>
+        <Box sx={{ position: "relative", width: "100%", maxWidth: 450, mx: "auto", borderRadius: "20px", overflow: "hidden" }}>
+          <Image src="/medico-texto.png" alt="Médico CTA" width={400} height={400} style={{ width: "100%", height: "auto" }} />
+
+          <Box sx={{ position: "absolute", top: "8%", left: "5%", width: "90%", color: "#000C1E", textAlign: "left" }}>
+            <Typography variant="h6" sx={{ fontStyle: "italic", fontWeight: 600, lineHeight: 1.3, pb: 1 }}>
+              Pronto para transformar o<br />atendimento público<br />de saúde?
+            </Typography>
+          </Box>
+
+          <Box sx={{ position: "absolute", bottom: "20%", left: "10%", width: "90%", color: "#000C1E", textAlign: "left" }}>
+            <Typography variant="h6" fontWeight="bold" sx={{ lineHeight: 1.3 }}>
+              Clique aqui e<br />agende já uma<br />reunião com<br />nosso time!
+            </Typography>
+          </Box>
         </Box>
       </Box>
 
-      {/* Footer */}
-      <Box
-        sx={{
-          bgcolor: "white",
-          color: "#000C1E",
-          borderRadius: "20px 20px 0 0",
-          textAlign: "center",
-          p: 3,
-        }}
-      >
-        <img src="/icone-descomplicafooter.png" alt="Logo Descomplica" style={{ width: 140, marginBottom: 20 }} />
-        <Typography variant="h6" fontWeight="bold" gutterBottom>
-          CONTATO
-        </Typography>
-        <Stack
-          sx={{
-            backgroundImage: "linear-gradient(90deg, #26D0CE, #1A9E84)",
-            borderRadius: 2,
-            p: 2,
-            mb: 3,
-            color: "white",
-          }}
-          spacing={1}
-        >
+      {/* FOOTER */}
+      <Box sx={{ bgcolor: "#F5F5F5", color: "#000C1E", borderRadius: "20px 20px 0 0", textAlign: "center", p: 3 }}>
+        <Box sx={{ mb: 2 }}>
+          <Image src="/icone-descomplicafooter.png" alt="Logo Descomplica" width={140} height={30} style={{ width: "140px", height: "auto" }} />
+        </Box>
+
+        <Typography variant="h6" fontWeight="bold" sx={{ textAlign: "left", mb: 1 }}>CONTATO</Typography>
+
+        <Stack sx={{ background: "linear-gradient(90deg, #26D0CE, #1A9E84)", borderRadius: 2, p: 2, mb: 3, color: "white" }} spacing={1}>
           <Box display="flex" alignItems="center" gap={1}>
-            <img src="/icone-whats.png" alt="WhatsApp" style={{ width: 20, height: 20 }} />
+            <Image src="/icone-telefone.png" alt="WhatsApp" width={20} height={20} />
             <Typography variant="body2">descomplicamedicinaagora@gmail.com</Typography>
           </Box>
           <Box display="flex" alignItems="center" gap={1}>
-            <img src="/icone-telefone.png" alt="Telefone" style={{ width: 20, height: 20 }} />
+            <Image src="/icone-whats.png" alt="Telefone" width={20} height={20} />
             <Typography variant="body2">(47) 98899-2915</Typography>
           </Box>
         </Stack>
 
-        <Stack direction="row" spacing={2} justifyContent="center" mb={3}>
-          <img src="/icone-instagram.png" alt="Instagram" style={{ width: 40, height: 40 }} />
-          <img src="/icone-linkedin.png" alt="LinkedIn" style={{ width: 40, height: 40 }} />
+        <Stack direction="row" spacing={0} justifyContent="center" sx={{ mb: 2 }}>
+          <Link href="https://www.instagram.com/your-instagram-handle" target="_blank" rel="noopener">
+            <Image src="/icone-instagram.png" alt="Instagram" width={60} height={60} />
+          </Link>
+          <Link href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener">
+            <Image src="/icone-linkedin.png" alt="LinkedIn" width={60} height={60} />
+          </Link>
         </Stack>
 
-        <Stack direction="row" spacing={2} justifyContent="center">
-          <img src="/icone-parana.png" alt="Governo do Paraná" style={{ height: 60 }} />
-          <img src="/icone-inovador.png" alt="Paraná Anjo Inovador" style={{ height: 60 }} />
-        </Stack>
+        <Box sx={{ bgcolor: "white", borderRadius: 2, p: 2, display: "flex", justifyContent: "space-around", alignItems: "center", gap: 2, flexWrap: "wrap" }}>
+          <Image src="/icone-parana.png" alt="Governo do Paraná" width={130} height={90} />
+          <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={120} height={90} />
+        </Box>
       </Box>
     </Box>
   );
