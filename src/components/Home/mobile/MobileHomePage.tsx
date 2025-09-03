@@ -59,21 +59,26 @@ export const MobileHomePage: React.FC = () => {
             </Box>
           </Typography>
 
-          <Button
-            variant="contained"
-            sx={{
-              mt: 3,
-              borderRadius: 3,
-              backgroundColor: "#04D77B",
-              color: "#000C1E",
-              fontWeight: "bold",
-              fontStyle: "italic",
-              textTransform: "none",
-              "&:hover": { backgroundColor: "#03b36a" },
-            }}
-          >
-            Saiba mais!
-          </Button>
+         <Button
+  component="a"
+  href="https://wa.me/554788992915"
+  target="_blank"
+  rel="noopener noreferrer"
+  variant="contained"
+  sx={{
+    mt: 3,
+    borderRadius: 3,
+    backgroundColor: "#04D77B",
+    color: "#000C1E",
+    fontWeight: "bold",
+    fontStyle: "italic",
+    textTransform: "none",
+    "&:hover": { backgroundColor: "#03b36a" },
+  }}
+>
+  Saiba mais!
+</Button>
+
         </Box>
 
         <Box sx={{ mt: -40, position: "relative", zIndex: 1 }}>
@@ -86,7 +91,7 @@ export const MobileHomePage: React.FC = () => {
           />
         </Box>
 
-        <Box sx={{ mt: -70, position: "relative", zIndex: 1 }}>
+        <Box sx={{ mt: -40, position: "relative", zIndex: 1 }}>
           <Image
             src="/medico-01.png"
             alt="Médico com tablet"
@@ -133,7 +138,7 @@ export const MobileHomePage: React.FC = () => {
       </Box>
 
       {/* COMO FUNCIONA SECTION */}
-      <Box sx={{ px: 3, py: 2 }}>
+      <Box sx={{ px: 2, py: 2 }}>
         <Typography
           variant="h6"
           fontWeight="bold"
@@ -170,7 +175,9 @@ export const MobileHomePage: React.FC = () => {
         </Box>
 
         <Box textAlign="center">
-          <Button variant="contained" sx={{ mt: 4, borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }}>
+          <Button
+          href="https://wa.me/554788992915"
+          variant="contained" sx={{ mt: 4, borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }}>
             Fale conosco
           </Button>
         </Box>
@@ -189,31 +196,43 @@ export const MobileHomePage: React.FC = () => {
     gap: 2,
   }}
 >
-  {/* Texto */}
-  <Box sx={{ flex: 1, textAlign: "left" }}>
-    <Typography
-      variant="h5"
-      fontWeight="bold"
-      sx={{ color: "#FFFFFF", fontStyle: "italic", mb: 1 }}
-    >
-      Resultados que fazem a diferença!
-    </Typography>
-   
-  </Box>
+ 
 
-  {/* Imagem */}
-  <Box sx={{ flexShrink: 0, mt: { xs: 2, sm: 0 }, ml: { sm: 3 } }}>
-    <Image
-      src="/medicos-02.png"
-      alt="Médicos"
-      width={800}          // aumenta a largura base
-      height={460}         // ajusta a altura proporcional
-      style={{ width: "100%", maxWidth: 600, height: "auto" }}
-    />
-  </Box>
+ {/* Imagem */}
+<Box
+  sx={{
+    flexShrink: 0,
+    mt: { xs: 1, sm: 0 },
+    ml: { sm: 3 },
+    width: { xs: "100%", sm: "50%" }, // ocupa 60% no desktop
+    display: "flex",
+    justifyContent: "flex-end", // garante alinhamento à direita
+  }}
+>
+  <Image
+    src="/medicos-02.png"
+    alt="Médicos"
+    width={1500} // largura base maior
+    height={800} // altura proporcional
+    style={{
+      width: "100%",
+      maxWidth: "100%", // deixa expandir até o limite do container
+      height: "auto",
+    }}
+  />
 </Box>
+</Box> {/* Fecha o Box pai dos médicos e texto */}
 
-
+{/* Texto */}
+<Box sx={{ flex: 1, textAlign: "left", mt: { xs: 7, md: 8 } }}>
+  <Typography
+    variant="h5"
+    fontWeight="bold"
+    sx={{ color: "#FFFFFF", fontStyle: "italic", mb: 1 }}
+  >
+    Resultados que fazem a diferença!
+  </Typography>
+</Box>
 
       {/* RESULTADOS SECTION */}
       <Box
@@ -274,29 +293,91 @@ export const MobileHomePage: React.FC = () => {
 </Box>
 
       <Box textAlign="center" sx={{ mt: 10 }}>
-        <Button variant="contained" sx={{ borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }}>
+        <Button
+        href="https://wa.me/554788992915"
+        variant="contained" sx={{ borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }}>
           Entre já em contato!
         </Button>
       </Box>
 
-      {/* CTA IMAGE */}
-      <Box sx={{ position: "relative", mb: 6, bgcolor: "#000C1E", px: 2, pt: 4, pb: 8, textAlign: "center" }}>
-        <Box sx={{ position: "relative", width: "100%", maxWidth: 450, mx: "auto", borderRadius: "20px", overflow: "hidden" }}>
-          <Image src="/medico-texto.png" alt="Médico CTA" width={400} height={400} style={{ width: "100%", height: "auto" }} />
+     {/* CTA IMAGE */}
+<Link
+  href="https://wa.me/554788992915"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ textDecoration: "none" }}
+>
+  <Box
+    sx={{
+      position: "relative",
+      mb: 6,
+      bgcolor: "#000C1E",
+      px: 1,
+      pt: 4,
+      pb: 8,
+      textAlign: "center",
+      cursor: "pointer",
+    }}
+  >
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        maxWidth: 450,
+        mx: "auto",
+        borderRadius: "10px",
+        overflow: "hidden",
+      }}
+    >
+      <Image
+        src="/medico-texto.png"
+        alt="Médico CTA"
+        width={400}
+        height={400}
+        style={{ width: "100%", height: "auto" }}
+      />
 
-          <Box sx={{ position: "absolute", top: "8%", left: "5%", width: "90%", color: "#000C1E", textAlign: "left" }}>
-            <Typography variant="h6" sx={{ fontStyle: "italic", fontWeight: 600, lineHeight: 1.3, pb: 1 }}>
-              Pronto para transformar o<br />atendimento público<br />de saúde?
-            </Typography>
-          </Box>
-
-          <Box sx={{ position: "absolute", bottom: "20%", left: "10%", width: "90%", color: "#000C1E", textAlign: "left" }}>
-            <Typography variant="h6" fontWeight="bold" sx={{ lineHeight: 1.3 }}>
-              Clique aqui e<br />agende já uma<br />reunião com<br />nosso time!
-            </Typography>
-          </Box>
-        </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          top: "8%",
+          left: "4%",
+          width: "90%",
+          color: "#000C1E",
+          textAlign: "left",
+        }}
+      >
+        <Typography
+          variant="h7"
+          sx={{ fontStyle: "italic", fontWeight: 600, lineHeight: 1.3, pb: 1 }}
+        >
+          Pronto para transformar<br />
+          o atendimento público<br />
+          de saúde?
+        </Typography>
       </Box>
+
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "30%",
+          left: "9%",
+          width: "90%",
+          color: "#000C1E",
+          textAlign: "left",
+        }}
+      >
+        <Typography variant="h7" fontWeight="bold" sx={{ lineHeight: 1.3 }}>
+          Clique aqui e<br />
+          agende já uma<br />
+          reunião com<br />
+          nosso time!
+        </Typography>
+      </Box>
+    </Box>
+  </Box>
+</Link>
+
 
       {/* FOOTER */}
       <Box sx={{ bgcolor: "#F5F5F5", color: "#000C1E", borderRadius: "20px 20px 0 0", textAlign: "center", p: 3 }}>
@@ -316,15 +397,32 @@ export const MobileHomePage: React.FC = () => {
             <Typography variant="body2">(47) 98899-2915</Typography>
           </Box>
         </Stack>
+<Stack
+  direction="row"
+  spacing={2}
+  justifyContent="center"
+  sx={{ mb: 2 }}
+>
+  <Box
+    sx={{
+      backgroundColor: "black",
+      borderRadius: "12px",
+      px: 2,
+      py: 2,
+      display: "flex",
+      gap: 3,
+      alignItems: "center",
+    }}
+  >
+    <Link href="https://www.instagram.com/your-instagram-handle" target="_blank" rel="noopener">
+      <Image src="/icone-instagram.png" alt="Instagram" width={60} height={60} />
+    </Link>
+    <Link href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener">
+      <Image src="/icone-linkedin.png" alt="LinkedIn" width={60} height={60} />
+    </Link>
+  </Box>
+</Stack>
 
-        <Stack direction="row" spacing={0} justifyContent="center" sx={{ mb: 2 }}>
-          <Link href="https://www.instagram.com/your-instagram-handle" target="_blank" rel="noopener">
-            <Image src="/icone-instagram.png" alt="Instagram" width={60} height={60} />
-          </Link>
-          <Link href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener">
-            <Image src="/icone-linkedin.png" alt="LinkedIn" width={60} height={60} />
-          </Link>
-        </Stack>
 
         <Box sx={{ bgcolor: "white", borderRadius: 2, p: 2, display: "flex", justifyContent: "space-around", alignItems: "center", gap: 2, flexWrap: "wrap" }}>
           <Image src="/icone-parana.png" alt="Governo do Paraná" width={130} height={90} />
