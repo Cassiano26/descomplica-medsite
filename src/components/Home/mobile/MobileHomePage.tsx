@@ -348,7 +348,7 @@ export const MobileHomePage: React.FC = () => {
         }}
       >
         <Typography
-          variant="h7"
+          variant="h6"
           sx={{ fontStyle: "italic", fontWeight: 600, lineHeight: 1.3, pb: 1 }}
         >
           Pronto para transformar<br />
@@ -367,7 +367,7 @@ export const MobileHomePage: React.FC = () => {
           textAlign: "left",
         }}
       >
-        <Typography variant="h7" fontWeight="bold" sx={{ lineHeight: 1.3 }}>
+        <Typography variant="h6" fontWeight="bold" sx={{ lineHeight: 1.3 }}>
           Clique aqui e<br />
           agende já uma<br />
           reunião com<br />
