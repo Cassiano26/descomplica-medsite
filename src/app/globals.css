@@ -1,32 +1,41 @@
+/* src/app/globals.css */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/proxima-nova/Fontspring-DEMO-proximanova-regular.woff2') format('woff2'),
+       url('/fonts/proxima-nova/Fontspring-DEMO-proximanova-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Condensed';
+  src: url('/fonts/proxima-nova/Fontspring-DEMO-proximanovacond-bold.woff2') format('woff2'),
+       url('/fonts/proxima-nova/Fontspring-DEMO-proximanovacond-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Condensed';
+  src: url('/fonts/proxima-nova/Fontspring-DEMO-proximanovacond-mediumit.woff2') format('woff2'),
+       url('/fonts/proxima-nova/Fontspring-DEMO-proximanovacond-mediumit.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-proxima-nova: 'Proxima Nova', Arial, sans-serif;
+  --font-proxima-nova-cond: 'Proxima Nova Condensed', Arial, sans-serif;
+}
+
 /* Reset básico */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Base mobile-first */
-html, body {
-  min-height: 100%;
-  width: 100%;
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-  color: white;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Mantém a cor do texto por padrão em branco */
-main {
-  position: relative;
-  overflow: hidden;
-  color: white;
-}
-
-/* Remove estilos padrão de botão no mobile */
-button {
-  font-family: inherit;
-  border: none;
-  outline: none;
-  cursor: pointer;
+  font-family: var(--font-proxima-nova);
+  background-color: #fff;
 }

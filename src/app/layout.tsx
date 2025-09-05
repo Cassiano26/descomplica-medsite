@@ -1,24 +1,12 @@
 import './globals.css';
-import { Montserrat } from 'next/font/google';
 import { ThemeProvider } from "@mui/material/styles";
-import theme from "../styles/theme";
+import theme from './theme';
 
-// Configuração da fonte Montserrat
-const montserrat = Montserrat({ subsets: ['latin'] });
 
-export const metadata = {
-  title: 'Descomplica Medicina',
-  description: 'Soluções em saúde pública com inteligência artificial.',
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt">
-      <body className={montserrat.className}>
+    <html lang="pt-BR">
+      <body>
         <ThemeProvider theme={theme}>
           {children}
         </ThemeProvider>
