@@ -77,7 +77,7 @@ export const MobileHomePage: React.FC = () => {
         </Box>
 
         {/* Imagens Hero */}
-        <Box sx={{ mt: -50, position: "relative", zIndex: 1 }}>
+        <Box sx={{ mt: -30, position: "relative", zIndex: 1 }}>
           <Image src="/icone-fundo.png" alt="icone fundo" width={300} height={400} style={{ width: "100%", height: "auto" }} />
         </Box>
         <Box sx={{ mt: -40, position: "relative", zIndex: 1 }}>
@@ -125,8 +125,8 @@ export const MobileHomePage: React.FC = () => {
           sx={{
             background: "linear-gradient(to right, #4703FB, #57B7EF)",
             borderRadius: "30px",
-            px: 13,
-            py: 2,
+            px: 9,
+            py: 1,
             color: "white",
             display: "inline-block",
             mb: 6,
@@ -232,7 +232,7 @@ export const MobileHomePage: React.FC = () => {
 
 
      {/* CTA IMAGE */}
-<Box sx={{ px: 2, mt: 8, mb: 8 }}> {/* margens iguais ao resto do site */}
+<Box sx={{ px: 1, mt: 8, mb: 8 }}> {/* margens iguais ao resto do site */}
   <Link
     href="https://wa.me/554788992915"
     target="_blank"
@@ -254,13 +254,13 @@ export const MobileHomePage: React.FC = () => {
       <Image
         src="/medico-texto.png"
         alt="Médico CTA"
-        width={400}
-        height={400}
+        width={450}
+        height={450}
         style={{ width: "100%", height: "auto" }}
       />
 
       {/* TEXTO SUPERIOR */}
-      <Box sx={{ position: "absolute", top: "10%", left: "7%", width: "90%", color: "#FFFFFF", textAlign: "left" }}>
+      <Box sx={{ position: "absolute", top: "10%", left: "7%", width: "70%", color: "#FFFFFF", textAlign: "left" }}>
         <Typography variant="h4" sx={{ lineHeight: 1.2, pb: 1 }}>
           <Box component="span" sx={{ fontWeight: "bold" }}>Pronto para <br />
           transformar o <br />
@@ -271,7 +271,7 @@ export const MobileHomePage: React.FC = () => {
 
       {/* TEXTO INFERIOR */}
       <Box sx={{ position: "absolute", bottom: "30%", left: "7%", width: "90%", color: "#FFFFFF", textAlign: "left" }}>
-        <Typography variant="h6" sx={{ lineHeight: 1.4 }}>
+        <Typography variant="h4" sx={{ lineHeight: 1.4 }}>
           <Box component="span" sx={{ fontWeight: "bold" }}>Clique</Box> aqui e<br />
           agende já uma<br />
           reunião com<br />

@@ -150,7 +150,7 @@ const DesktopHomePage: React.FC = () => {
       </Box>
 
       {/* RESULTADOS + IMAGENS */}
-      <Box sx={{ position: "relative", px: { md: 12, lg: 16 }, py: 12, color: "white", backgroundColor: "#000C1E", overflow: "hidden" }}>
+      <Box sx={{ position: "relative", px: { md: 6, lg: 13 }, py: 12, color: "white", backgroundColor: "#000C1E", overflow: "hidden" }}>
         <Box sx={{ position: "absolute", top: "10%", left: { xs: "10%", md: "-20%" }, width: { xs: "120%", md: "70%" }, height: "auto", opacity: 1, zIndex: 0 }}>
           <Image src="/icone-descomplicadois.png" alt="Ícone Descomplica dois" width={600} height={600} style={{ width: "100%", height: "auto" }} />
         </Box>
@@ -185,55 +185,174 @@ const DesktopHomePage: React.FC = () => {
   </Box>
 </Box>
 
-        <Typography variant="h5" fontWeight="bold" sx={{ color: "#FFFFFF", fontStyle: "italic", mb: 6, textAlign: "left" }}>
-          Resultados que fazem a <br />diferença!
-        </Typography>
-        <Box sx={{ background: "linear-gradient(to bottom, #1f6d9bff, #189760ff)", borderRadius: 3, p: 4, display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", position: "relative", textAlign: "center", maxWidth: 600, mx: "auto", gap: 4 }}>
-          <Box textAlign="center" p={2}>
-            <Typography variant="h3" fontWeight="bold" sx={{ fontStyle: "italic", color: "white", mb: 1 }}>40%</Typography>
-            <Typography variant="body1" sx={{ color: "white" }}>menos encaminhamentos</Typography>
-          </Box>
-          <Box textAlign="center" p={2}>
-            <Typography variant="h3" fontWeight="bold" sx={{ fontStyle: "italic", color: "white", mb: 1 }}>95%</Typography>
-            <Typography variant="body1" sx={{ color: "white" }}>de aprovação entre os médicos</Typography>
-          </Box>
-          <Box textAlign="center" p={2}>
-            <Typography variant="h3" fontWeight="bold" sx={{ fontStyle: "italic", color: "white", mb: 1 }}>10%</Typography>
-            <Typography variant="body1" sx={{ color: "white" }}>de economia no orçamento da saúde</Typography>
-          </Box>
-          <Box textAlign="center" p={2}>
-            <Typography variant="h3" fontWeight="bold" sx={{ fontStyle: "italic", color: "white", mb: 1 }}>50%</Typography>
-            <Typography variant="body1" sx={{ color: "white" }}>menos exames desnecessários</Typography>
-          </Box>
-        </Box>
-        <Box textAlign="center" sx={{ mt: 8 }}>
-          <Button component="a" href="https://wa.me/554788992915" target="_blank" rel="noopener noreferrer" variant="contained" sx={{ borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none", px: 4, py: 1.5, fontSize: "1.1rem", "&:hover": { backgroundColor: "#03c76f" } }}>
-            Entre já em contato!
-          </Button>
-        </Box>
-      </Box>
+       <Typography
+  variant="h5"
+  fontWeight="bold"
+  sx={{ color: "#FFFFFF", fontStyle: "italic", mb: 10, textAlign: "left" }}
+>
+  Resultados que fazem a <br />diferença!
+</Typography>
+
+<Box
+  sx={{
+    background: "linear-gradient(to bottom, #1f6d9bff, #189760ff)",
+    borderRadius: 3,
+    p: 4,
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gridTemplateRows: "1fr 1fr",
+    position: "relative",
+    textAlign: "center",
+    maxWidth: 600,
+    mx: "auto",
+    gap: 4,
+  }}
+>
+  {/* Cruz branca central */}
+  <Box
+    sx={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      width: "1px",
+      height: "90%",
+      bgcolor: "white",
+      transform: "translate(-50%, -50%)",
+      zIndex: 1,
+    }}
+  />
+  <Box
+    sx={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      width: "90%",
+      height: "1px",
+      bgcolor: "white",
+      transform: "translate(-50%, -50%)",
+      zIndex: 1,
+    }}
+  />
+
+  {/* Quadrantes */}
+  {[
+    { value: "40%", text: "menos encaminhamentos" },
+    { value: "95%", text: "de aprovação entre os médicos" },
+    { value: "10%", text: "de economia no orçamento da saúde" },
+    { value: "50%", text: "menos exames desnecessários" },
+  ].map((item, i) => (
+    <Box key={i} textAlign="center" p={2} sx={{ zIndex: 2 }}>
+      <Typography
+        variant="h2"
+        fontWeight="bold"
+        sx={{ fontStyle: "italic", color: "white", mb: 1, fontSize: "2rem" }}
+      >
+        {item.value}
+      </Typography>
+      <Typography variant="body1" sx={{ color: "white" }}>
+        {item.text}
+      </Typography>
+    </Box>
+  ))}
+</Box>
+
+<Box textAlign="center" sx={{ mt: 8 }}>
+  <Button
+    component="a"
+    href="https://wa.me/554788992915"
+    target="_blank"
+    rel="noopener noreferrer"
+    variant="contained"
+    sx={{
+      borderRadius: 3,
+      backgroundColor: "#04D77B",
+      color: "#000C1E",
+      fontWeight: "bold",
+      fontStyle: "italic",
+      textTransform: "none",
+      px: 4,
+      py: 1.5,
+      fontSize: "1.1rem",
+      "&:hover": { backgroundColor: "#03c76f" },
+    }}
+  >
+    Entre já em contato!
+  </Button>
+</Box>
+</Box>
+
 
       {/* CTA IMAGE */}
-      <Box sx={{ position: "relative", py: 12, bgcolor: "#000C1E" }}>
-        <Box sx={{ position: "absolute", inset: 0, zIndex: 1 }}>
-          <Image src="/gradiente-medico.png" alt="Gradiente fundo" fill style={{ objectFit: "cover" }} />
-        </Box>
-        <a href="https://wa.me/554788992915" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-          <Box sx={{ position: "relative", width: "100%", maxWidth: 1000, mx: "auto", borderRadius: "20px", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", zIndex: 2, transform: "scale(0.7)", transformOrigin: "center center" }}>
-            <Image src="/medico-texto.png" alt="Médico CTA" width={900} height={450} style={{ width: "100%", height: "auto", position: "relative", zIndex: 2 }} />
-            <Box sx={{ position: "absolute", top: "3%", left: "6%", width: "50%", color: "#000C1E", textAlign: "left", zIndex: 3 }}>
-              <Typography variant="h3" sx={{ fontStyle: "italic", fontWeight: 1000, lineHeight: 1.3, pb: 2 }}>
-                <b>Pronto</b> para transformar o atendimento público de saúde?
-              </Typography>
-            </Box>
-            <Box sx={{ position: "absolute", bottom: "20%", left: "5%", width: "40%", color: "#000C1E", textAlign: "left", zIndex: 3 }}>
-              <Typography variant="h3" sx={{ lineHeight: 1.4 }}>
-                <b>Clique</b> aqui e agende já uma reunião com nosso time!
-              </Typography>
-            </Box>
-          </Box>
-        </a>
+<Box sx={{ position: "relative", py: 12, bgcolor: "#000C1E" }}>
+  {/* Fundo gradiente */}
+  <Box sx={{ position: "absolute", inset: 0, zIndex: 1 }}>
+    <Image src="/gradiente-medico.png" alt="Gradiente fundo" fill style={{ objectFit: "cover" }} />
+  </Box>
+
+  {/* Link para WhatsApp */}
+  <a href="https://wa.me/554788992915" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        maxWidth: 500, // 50% da largura original
+        mx: "auto",
+        borderRadius: "20px",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        zIndex: 2,
+      }}
+    >
+      {/* Imagem do médico reduzida */}
+      <Image
+        src="/medico-texto.png"
+        alt="Médico CTA"
+        width={450} // metade da largura original
+        height={225} // metade da altura original
+        style={{ width: "100%", height: "auto", position: "relative", zIndex: 2 }}
+      />
+
+      {/* Texto superior */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: "5%",
+          left: "6%",
+          width: "50%",
+          color: "#000C1E",
+          textAlign: "left",
+          zIndex: 3,
+        }}
+      >
+        <Typography variant="h4" sx={{ fontStyle: "italic", lineHeight: 1.3, pb: 2 }}>
+          <b>Pronto</b> para transformar o atendimento público de saúde?
+        </Typography>
       </Box>
+
+      {/* Texto inferior */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "15%",
+          left: "5%",
+          width: "45%",
+          color: "#000C1E",
+          textAlign: "left",
+          zIndex: 3,
+        }}
+      >
+        <Typography variant="h4" sx={{ lineHeight: 1.4 }}>
+          <b>Clique</b> aqui e agende já uma reunião com nosso time!
+        </Typography>
+      </Box>
+    </Box>
+  </a>
+</Box>
+
+
 
       {/* FOOTER */}
       <Box sx={{ bgcolor: "#F5F5F5", color: "#000C1E", borderRadius: "20px 20px 0 0", textAlign: "center", px: { md: 8, lg: 12 }, py: 6, display: "flex", flexDirection: "column", gap: 4 }}>
