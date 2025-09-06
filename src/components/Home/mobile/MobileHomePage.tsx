@@ -156,20 +156,42 @@ export const MobileHomePage: React.FC = () => {
     />
   </Box>
 
-        <Box textAlign="center">
-          <Button variant="contained" sx={{ mt: 4, borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }} onClick={openWhatsApp}>
+ <Box textAlign="center">
+          <Button variant="contained" sx={{ mt: 0, borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }} onClick={openWhatsApp}>
             Entre já em contato
           </Button>
         </Box>
       </Box>
 
-      {/* CTA IMAGE */}
-      <Box sx={{ px: 1, mt: 10, mb: 15 }}>
-        <Box sx={{ position: "relative", bgcolor: "#000C1E", px: 0, pt: 0, pb: 0, textAlign: "right", cursor: "pointer", borderRadius: 0, overflow: "hidden", height: 380 }} onClick={openWhatsApp}>
-          <Image src="/medico-texto.png" alt="Médico CTA" fill style={{ objectFit: "cover" }} />
-        </Box>
-      </Box>
 
+  {/* CTA IMAGE */}
+<Box sx={{ px: 1, mt: 10, mb: 15 }}>
+  <Box
+    sx={{
+      position: "relative",
+      bgcolor: "#000C1E",
+      px: 0,
+      pt: 0,
+      pb: 0,
+      textAlign: "right",
+      cursor: "pointer",
+      borderRadius: 0,
+      overflow: "hidden",
+      height: 380,
+    }}
+    onClick={openWhatsApp}
+  >
+    <Image
+      src="/medico-texto.png"
+      alt="Médico CTA"
+      fill
+      style={{ objectFit: "contain", objectPosition: "center" }}
+    />
+  </Box>
+</Box>
+
+       
+    
 
     {/* FOOTER */}
 <Box sx={{ px: { xs: 2, md: 12 }, mt: 6 }}> {/* margem lateral igual ao resto do site */}
