@@ -31,7 +31,6 @@ export const MobileHero = () => {
 
       <Stack spacing={2} alignItems="center">
         <Typography
-        
           variant="h1"
           fontWeight="bold"
           sx={{ color: "primary.main" }}
@@ -44,6 +43,10 @@ export const MobileHero = () => {
         </Typography>
 
         <Button
+          component="a"
+          href="https://wa.me/554788992915"
+          target="_blank"
+          rel="noopener noreferrer"
           variant="contained"
           color="secondary"
           sx={{ borderRadius: 4, px: 3 }}

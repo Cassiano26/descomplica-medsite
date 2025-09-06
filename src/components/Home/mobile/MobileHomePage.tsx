@@ -12,7 +12,7 @@ interface StatBoxProps {
 
 const StatBox: React.FC<StatBoxProps> = ({ target, label }) => (
   <Box sx={{ borderBottom: "1px solid rgba(255,255,255,0.7)", py: 2, textAlign: "center" }}>
-    <Typography variant="h4" sx={{ fontWeight: "bold", fontStyle: "italic", fontSize: "3rem", color: "#FFFFFF" }}>
+    <Typography variant="h3" sx={{ fontWeight: "bold", fontStyle: "italic", fontSize: "3rem", color: "#FFFFFF" }}>
       {target}%
     </Typography>
     <Typography variant="body1" sx={{ color: "#FFFFFF" }}>
@@ -43,7 +43,7 @@ export const MobileHomePage: React.FC = () => {
         </Box>
 
         <Box sx={{ pt: 12 }}>
-          <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ color: "rgba(255,255,255,0.88)", fontStyle: "italic" }}>
+          <Typography variant="h1" fontWeight="bold" gutterBottom sx={{ color: "rgba(255,255,255,0.88)", fontStyle: "italic" }}>
             Conectando a saúde<br />pública ao futuro!
           </Typography>
 
@@ -54,27 +54,35 @@ export const MobileHomePage: React.FC = () => {
             </Box>
           </Typography>
 
-        <Button
+     <Box textAlign="left">
+
+      <Button
   component="a"
   href="https://wa.me/554788992915"
   target="_blank"
   rel="noopener noreferrer"
+  variant="contained"
   sx={{
-    mt: 5,
-    borderRadius: 3,
+    mt: 3,
+    borderRadius: 4,
     backgroundColor: "#04D77B",
     color: "#000C1E",
     fontWeight: "bold",
     fontStyle: "italic",
     textTransform: "none",
+    px: 4,
+    py: 1.5,
+    fontSize: "1rem",
     "&:hover": { backgroundColor: "#03b36a" },
-    
   }}
 >
-  Saiba mais!
+  Saiba mais
 </Button>
 
+
         </Box>
+        </Box>
+        
 
         {/* Imagens Hero */}
         <Box sx={{ mt: -30, position: "relative", zIndex: 1 }}>
@@ -85,55 +93,99 @@ export const MobileHomePage: React.FC = () => {
         </Box>
       </Box>
 
-      {/* ABOUT SECTION */}
-      <Box sx={{ px: 2, pb: 6 }}>
-        <Typography variant="h5" gutterBottom sx={{ color: "rgba(255,255,255,0.88)", lineHeight: 1.5 }}>
-          Redução de custos e filas com triagens médicas inteligentes e comprovadas.{" "}
-          <Box component="span" sx={{ color: "rgba(255,255,255,0.88)", fontStyle: "italic", fontWeight: "bold" }}>
-            A solução que transforma o atendimento público com inteligência artificial.
-          </Box>
-        </Typography>
+    {/* ABOUT SECTION */}
+<Box sx={{ px: 2, pb: 8 }}>
+  <Typography
+    variant="h5"
+    gutterBottom
+    sx={{
+      color: "rgba(255,255,255,0.88)",
+      lineHeight: 1.6, // mais espaçamento entre linhas do título
+      mb: 4, // espaço extra após o título
+    }}
+  >
+    Redução de custos e filas com triagens médicas inteligentes e comprovadas.{" "}
+    <Box
+      component="span"
+      sx={{
+        color: "rgba(255,255,255,0.88)",
+        fontStyle: "italic",
+        fontWeight: "bold",
+      }}
+    >
+      A solução que transforma o atendimento público com inteligência artificial.
+    </Box>
+  </Typography>
 
-        <Typography variant="body2" gutterBottom sx={{ color: "rgba(255,255,255,0.88)", mt: 2 }}>
-          A <b>Descomplica Medicina</b> utiliza inteligência artificial generativa aliada à expertise médica para otimizar o processo de encaminhamento. O resultado?{" "}
-          <Box component="span" sx={{ color: "rgba(255,255,255,0.88)", fontStyle: "italic", fontWeight: "bold" }}>
-            Redução de filas, economia de recursos e mais dignidade no atendimento.
-          </Box>
-        </Typography>
+  <Typography
+    variant="body2"
+    gutterBottom
+    sx={{
+      color: "rgba(255,255,255,0.88)",
+      lineHeight: 1.8, // mais respiro no corpo
+      mb: 4, // espaço extra entre parágrafos
+    }}
+  >
+    A <b>Descomplica Medicina</b> utiliza inteligência artificial generativa aliada à expertise médica para otimizar o processo de encaminhamento. O resultado?{" "}
+    <Box
+      component="span"
+      sx={{
+        color: "rgba(255,255,255,0.88)",
+        fontStyle: "italic",
+        fontWeight: "bold",
+      }}
+    >
+      Redução de filas, economia de recursos e mais dignidade no atendimento.
+    </Box>
+  </Typography>
 
-        <Box sx={{ my: 2 }}>
-          <Image src="/computador-01.png" alt="Dashboard IA" width={400} height={200} style={{ width: "100%", height: "auto" }} />
-        </Box>
+  <Box sx={{ my: 4 }}>
+    <Image
+      src="/computador-01.png"
+      alt="Dashboard IA"
+      width={300}
+      height={200}
+      style={{ width: "100%", height: "auto" }}
+    />
+  </Box>
 
-        <Typography variant="body2" sx={{ color: "#FFFFFF" }}>
-          Nossa plataforma oferece um{" "}
-          <Box component="span" sx={{ color: "#FFFFFF", fontStyle: "italic", fontWeight: "bold" }}>
-            dashboard em tempo real
-          </Box>
-          , que permite ao gestor visualizar indicadores de desempenho, identificar gargalos e tomar decisões baseadas em dados — tudo com foco na eficiência do sistema e no uso responsável dos recursos públicos.
-        </Typography>
-      </Box>
+  <Typography
+    variant="body2"
+    sx={{
+      color: "#FFFFFF",
+      lineHeight: 1.8, // mais espaçamento entre linhas
+    }}
+  >
+    Nossa plataforma oferece um{" "}
+    <Box
+      component="span"
+      sx={{ color: "#FFFFFF", fontStyle: "italic", fontWeight: "bold" }}
+    >
+      dashboard em tempo real
+    </Box>
+    , que permite ao gestor visualizar indicadores de desempenho, identificar gargalos e tomar decisões baseadas em dados — tudo com foco na eficiência do sistema e no uso responsável dos recursos públicos.
+  </Typography>
+</Box>
 
 
+    {/* COMO FUNCIONA SECTION */}
+<Box sx={{ px: 2, py: 2, textAlign: "center" }}>
+  <Typography
+    variant="h6"
+    fontWeight="bold"
+    sx={{
+      background: "linear-gradient(to right, #4703FB, #57B7EF)",
+      borderRadius: "30px",
+      px: 9,
+      py: 1,
+      color: "white",
+      display: "inline-block", // mantém largura justa ao texto
+      mb: 6,
+    }}
+  >
+    Como funciona?
+  </Typography>
 
-             {/* COMO FUNCIONA SECTION */}
-      <Box sx={{ px: 2, py: 2 }}>
-        <Typography
-          variant="h6"
-          fontWeight="bold"
-          textAlign="right"
-          sx={{
-            background: "linear-gradient(to right, #4703FB, #57B7EF)",
-            borderRadius: "30px",
-            px: 9,
-            py: 1,
-            color: "white",
-            display: "inline-block",
-            mb: 6,
-          }}
-        >
-          Como funciona?
-        </Typography>
 
         <Box sx={{ px: 1 }}>
           {steps.map((step, index) => (
@@ -142,8 +194,8 @@ export const MobileHomePage: React.FC = () => {
                 <Box sx={{ position: "absolute", left: "32px", top: "60px", bottom: "-50px", width: "2px", bgcolor: "#04D77B", opacity: 0.7 }} />
               )}
 
-              <Box sx={{ width: 64, height: 64, borderRadius: "50%", border: "2px solid #04D77B", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, bgcolor: "#000C1E", zIndex: 2, mr: 2 }}>
-                <Image src={step.icon} alt={step.text} width={32} height={32} />
+              <Box sx={{ width: 62, height: 62, borderRadius: "50%", border: "2px solid #04D77B", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, bgcolor: "#000C1E", zIndex: 2, mr: 2 }}>
+                <Image src={step.icon} alt={step.text} width={28} height={28} />
               </Box>
 
               <Typography variant="body1" sx={{ color: "white", flex: 1, pr: 2 }}>
@@ -168,7 +220,7 @@ export const MobileHomePage: React.FC = () => {
   <Box sx={{ textAlign: "center", mb: 10 }}> {/* espaçamento maior */}
     <Image
       src="/medicos-02.png"
-      alt="Médicos"
+      alt="édicos"
       width={1500}
       height={800}
       style={{ width: "100%", height: "auto" }}
@@ -203,36 +255,15 @@ export const MobileHomePage: React.FC = () => {
     </Stack>
   </Box>
 
-  {/* BOTÃO */}
-  <Box textAlign="center" sx={{ mt: 10 }}>
-    <Button
-      component="a"
-      href="https://wa.me/554788992915"
-      target="_blank"
-      rel="noopener noreferrer"
-      variant="contained"
-      sx={{
-        borderRadius: 4,
-        backgroundColor: "#04D77B",
-        color: "#000C1E",
-        fontWeight: "bold",
-        fontStyle: "italic",
-        textTransform: "none",
-        px: 3,
-        py: 1.8,
-        fontSize: "1.1rem",
-        "&:hover": { backgroundColor: "#03c76f" },
-      }}
-    >
-      Entre já em contato!
-    </Button>
+  <Box textAlign="center">
+          <Button href="https://wa.me/554788992915" variant="contained" sx={{ mt: 4, borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }}>
+            Entre já em contato
+          </Button>
   </Box>
 </Box>
 
-
-
-     {/* CTA IMAGE */}
-<Box sx={{ px: 1, mt: 8, mb: 8 }}> {/* margens iguais ao resto do site */}
+      {/* CTA IMAGE */}
+<Box sx={{ px: 0, mt: 10, mb: 15 }}>
   <Link
     href="https://wa.me/554788992915"
     target="_blank"
@@ -243,41 +274,24 @@ export const MobileHomePage: React.FC = () => {
       sx={{
         position: "relative",
         bgcolor: "#000C1E",
-        px: 1,
-        pt: 4,
-        pb: 8,
+        px: 0,
+        pt: 0,
+        pb: 0,
         textAlign: "center",
         cursor: "pointer",
-        borderRadius: 3,
+        borderRadius: 1,
+        overflow: "hidden", // impede que a imagem ultrapasse as bordas arredondadas
+        height: 400, // altura fixa (pode ajustar conforme layout desejado)
       }}
     >
       <Image
         src="/medico-texto.png"
         alt="Médico CTA"
-        width={450}
-        height={450}
-        style={{ width: "100%", height: "auto" }}
+        fill
+        style={{ objectFit: "cover" }}
       />
 
-      {/* TEXTO SUPERIOR */}
-      <Box sx={{ position: "absolute", top: "10%", left: "7%", width: "70%", color: "#FFFFFF", textAlign: "left" }}>
-        <Typography variant="h4" sx={{ lineHeight: 1.2, pb: 1 }}>
-          <Box component="span" sx={{ fontWeight: "bold" }}>Pronto para <br />
-          transformar o <br />
-          atendimento<br />
-          público de saúde?</Box> 
-        </Typography>
-      </Box>
-
-      {/* TEXTO INFERIOR */}
-      <Box sx={{ position: "absolute", bottom: "30%", left: "7%", width: "90%", color: "#FFFFFF", textAlign: "left" }}>
-        <Typography variant="h4" sx={{ lineHeight: 1.4 }}>
-          <Box component="span" sx={{ fontWeight: "bold" }}>Clique</Box> aqui e<br />
-          agende já uma<br />
-          reunião com<br />
-          nosso time!
-        </Typography>
-      </Box>
+      
     </Box>
   </Link>
 </Box>
@@ -319,7 +333,7 @@ export const MobileHomePage: React.FC = () => {
   {/* RETÂNGULO AZUL ESCURO COM LOGOS */}
   <Box sx={{ bgcolor: "#ffffffff", py: 4, mt: -3 }}> {/* azul escuro do site */}
     <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 4, flexWrap: "wrap" }}>
-      <Image src="/icone-parana.png" alt="Governo do Paraná" width={130} height={90} />
+      <Image src="/icone-parana.png" alt="Governo do Paraná" width={160} height={90} />
       <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={120} height={90} />
     </Box>
   </Box>

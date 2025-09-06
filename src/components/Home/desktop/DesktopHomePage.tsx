@@ -67,9 +67,28 @@ const DesktopHomePage: React.FC = () => {
                 sua cidade inovando na saúde pública!
               </Box>
             </Typography>
-            <Button variant="contained" sx={{ mt: 1, borderRadius: 2, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", textTransform: "none", px: 4, py: 1.5, fontSize: "1rem", "&:hover": { backgroundColor: "#03b36a" } }}>
-              Saiba mais!
-            </Button>
+            <Button
+  component="a"
+  href="https://wa.me/554788992915"
+  target="_blank"
+  rel="noopener noreferrer"
+  variant="contained"
+  sx={{
+    mt: 1,
+    borderRadius: 2,
+    backgroundColor: "#04D77B",
+    color: "#000C1E",
+    fontWeight: "bold",
+    textTransform: "none",
+    px: 4,
+    py: 1.5,
+    fontSize: "1rem",
+    "&:hover": { backgroundColor: "#03b36a" },
+  }}
+>
+  Saiba mais!
+</Button>
+
           </Box>
           <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center", position: "relative" }}>
             <Box sx={{ position: "relative", zIndex: 2, width: { md: 300, lg: 630 } }}>
@@ -149,49 +168,92 @@ const DesktopHomePage: React.FC = () => {
         </Box>
       </Box>
 
-      {/* RESULTADOS + IMAGENS */}
-      <Box sx={{ position: "relative", px: { md: 6, lg: 13 }, py: 12, color: "white", backgroundColor: "#000C1E", overflow: "hidden" }}>
-        <Box sx={{ position: "absolute", top: "10%", left: { xs: "10%", md: "-20%" }, width: { xs: "120%", md: "70%" }, height: "auto", opacity: 1, zIndex: 0 }}>
-          <Image src="/icone-descomplicadois.png" alt="Ícone Descomplica dois" width={600} height={600} style={{ width: "100%", height: "auto" }} />
-        </Box>
-        <Box
+            {/* RESULTADOS + IMAGENS */}
+<Box
   sx={{
     position: "relative",
-    width: "100%",
-    height: { md: "300px", lg: "550px" },
-    mb: 14,
+    px: { md: 10, lg: 0 },
+    py: 8,
+    color: "white",
+    backgroundColor: "#000C1E",
+    overflow: "hidden",
   }}
 >
+  {/* Ícone de fundo */}
   <Box
     sx={{
       position: "absolute",
-      right: 0, // cola na borda direita
-      bottom: 0, // alinha base da imagem ao container
-      height: "100%",
+      top: "10%",
+      left: { xs: "30%", md: "-20%" },
+      width: { xs: "120%", md: "70%" },
+      height: "auto",
+      opacity: 1,
+      zIndex: 0,
     }}
   >
     <Image
-      src="/medicos-02.png"
-      alt="Equipe médica adicional"
-      width={800}
-      height={1000}
-      style={{
-        width: "auto",
-        height: "100%",
-        objectFit: "contain",
-        display: "block",
-      }}
+      src="/icone-descomplicadois.png"
+      alt="Ícone Descomplica dois"
+      width={700}
+      height={700}
+      style={{ width: "100%", height: "auto" }}
     />
   </Box>
-</Box>
 
-       <Typography
-  variant="h5"
-  fontWeight="bold"
-  sx={{ color: "#FFFFFF", fontStyle: "italic", mb: 10, textAlign: "left" }}
->
-  Resultados que fazem a <br />diferença!
-</Typography>
+  {/* Imagem da equipe médica */}
+  <Box
+    sx={{
+      position: "relative",
+      width: "100%",
+      height: { md: "300px", lg: "550px" },
+      mb: { xs: 6, md: 14 }, // margem só para separar a imagem
+    }}
+  >
+    <Box
+      sx={{
+        position: "absolute",
+        right: 0, // cola na borda direita
+        bottom: 0, // alinha base da imagem ao container
+        height: "100%",
+      }}
+    >
+      <Image
+        src="/medicos-02.png"
+        alt="Equipe médica adicional"
+        width={800}
+        height={1000}
+        style={{
+          width: "auto",
+          height: "100%",
+          objectFit: "contain",
+          display: "block",
+        }}
+      />
+    </Box>
+  </Box>
+
+  <Box sx={{ px: 4, mb: { xs: 6, md: 10 } }}>
+  <Typography
+    variant="h5"
+    sx={{
+      color: "#FFFFFF",
+      fontStyle: "italic",
+      lineHeight: 1.3,
+      textAlign: "left",
+    }}
+  >
+    <Box
+      component="span"
+      sx={{
+        fontWeight: "bold",
+        pr: 0,
+      }}
+    >
+      Resultados
+    </Box>{" "}
+    que fazem a <br />diferença!
+  </Typography>
+</Box>
 
 <Box
   sx={{
@@ -327,9 +389,7 @@ const DesktopHomePage: React.FC = () => {
           zIndex: 3,
         }}
       >
-        <Typography variant="h4" sx={{ fontStyle: "italic", lineHeight: 1.3, pb: 2 }}>
-          <b>Pronto</b> para transformar o atendimento público de saúde?
-        </Typography>
+       
       </Box>
 
       {/* Texto inferior */}
@@ -344,38 +404,96 @@ const DesktopHomePage: React.FC = () => {
           zIndex: 3,
         }}
       >
-        <Typography variant="h4" sx={{ lineHeight: 1.4 }}>
-          <b>Clique</b> aqui e agende já uma reunião com nosso time!
-        </Typography>
+      
       </Box>
     </Box>
   </a>
 </Box>
+        {/* FOOTER */}
+<Box
+  sx={{
+    bgcolor: "#F5F5F5",
+    color: "#000C1E",
+    borderRadius: "20px 20px 0 0",
+    textAlign: "center",
+    px: { md: 8, lg: 12 },
+    py: 6,
+    display: "flex",
+    flexDirection: "column",
+    gap: 4,
+    mt: { xs: 8, md: 12 }, // margem superior do footer
+  }}
+>
+  {/* Logo */}
+  <Box>
+    <Image
+      src="/icone-descomplicafooter.png"
+      alt="Logo Descomplica"
+      width={200}
+      height={50}
+      style={{ width: "200px", height: "auto", margin: "0 auto" }}
+    />
+  </Box>
 
-
-
-      {/* FOOTER */}
-      <Box sx={{ bgcolor: "#F5F5F5", color: "#000C1E", borderRadius: "20px 20px 0 0", textAlign: "center", px: { md: 8, lg: 12 }, py: 6, display: "flex", flexDirection: "column", gap: 4 }}>
-        <Box>
-          <Image src="/icone-descomplicafooter.png" alt="Logo Descomplica" width={200} height={50} style={{ width: "200px", height: "auto", margin: "0 auto" }} />
-        </Box>
-        <Box sx={{ background: "linear-gradient(90deg, #2AD68D 0%, #17B978 100%)", borderRadius: 2, display: "flex", alignItems: "center", justifyContent: "space-between", px: 3, py: 2, flexWrap: "wrap", gap: 2 }}>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 1, textAlign: "left" }}>
-            <Typography variant="subtitle2" fontWeight="bold">CONTATO</Typography>
-            <Box display="flex" alignItems="center" gap={1}><Image src="/icone-whats.png" alt="WhatsApp" width={20} height={20} /><Typography variant="body2">descomplicamedicinaagora@gmail.com</Typography></Box>
-            <Box display="flex" alignItems="center" gap={1}><Image src="/icone-telefone.png" alt="Telefone" width={20} height={20} /><Typography variant="body2">(47) 98899-2915</Typography></Box>
-          </Box>
-          <Box sx={{ display: "flex", gap: 2 }}>
-            <Box sx={{ bgcolor: "#000C1E", borderRadius: 2, width: 50, height: 50, display: "flex", alignItems: "center", justifyContent: "center" }}><Image src="/icone-instagram.png" alt="Instagram" width={24} height={24} /></Box>
-            <Box sx={{ bgcolor: "#000C1E", borderRadius: 2, width: 50, height: 50, display: "flex", alignItems: "center", justifyContent: "center" }}><Image src="/icone-linkedin.png" alt="LinkedIn" width={24} height={24} /></Box>
-          </Box>
-        </Box>
-        <Box sx={{ bgcolor: "white", borderRadius: 2, p: 2, display: "flex", justifyContent: "center", alignItems: "center", gap: 4, flexWrap: "wrap" }}>
-          <Image src="/icone-parana.png" alt="Governo do Paraná" width={130} height={90} />
-          <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={130} height={90} />
-        </Box>
+  {/* Bloco verde contato */}
+  <Box
+    sx={{
+      background: "linear-gradient(90deg, #2AD68D 0%, #17B978 100%)",
+      borderRadius: 2,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      px: 3,
+      py: 2,
+      flexWrap: "wrap",
+      gap: 2,
+    }}
+  >
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 1, textAlign: "left" }}>
+      <Typography variant="subtitle2" fontWeight="bold">CONTATO</Typography>
+      <Box display="flex" alignItems="center" gap={1}>
+        <Image src="/icone-whats.png" alt="WhatsApp" width={20} height={20} />
+        <Typography variant="body2">descomplicamedicinaagora@gmail.com</Typography>
+      </Box>
+      <Box display="flex" alignItems="center" gap={1}>
+        <Image src="/icone-telefone.png" alt="Telefone" width={20} height={20} />
+        <Typography variant="body2">(47) 98899-2915</Typography>
       </Box>
     </Box>
+
+    {/* Redes sociais */}
+    <Box sx={{ display: "flex", gap: 2 }}>
+      <Box sx={{ bgcolor: "#000C1E", borderRadius: 2, width: 50, height: 50, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Image src="/icone-instagram.png" alt="Instagram" width={24} height={24} />
+      </Box>
+      <Box sx={{ bgcolor: "#000C1E", borderRadius: 2, width: 50, height: 50, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Image src="/icone-linkedin.png" alt="LinkedIn" width={24} height={24} />
+      </Box>
+    </Box>
+  </Box>
+</Box>
+
+{/* Bloco branco das logos (full width com espaçamento lateral) */}
+<Box
+  sx={{
+    bgcolor: "white",
+    borderRadius: 0,
+    py: 2,
+    px: { xs: 2, md: 9, lg: 3 }, // espaço lateral alinhado ao restante do site
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: { xs: 2, md: 4 },
+    flexWrap: "wrap",
+    width: "100%",
+  }}
+>
+  <Image src="/icone-parana.png" alt="Governo do Paraná" width={180} height={100} />
+  <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={150} height={100} />
+</Box>
+</Box>
+
+  
   );
 };
 
