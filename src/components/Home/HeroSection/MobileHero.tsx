@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Typography, Button, Stack } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 import Image from "next/image";
 
 export const MobileHero = () => {
@@ -30,6 +30,7 @@ export const MobileHero = () => {
       />
 
       <Stack spacing={2} alignItems="center">
+        {/* Título */}
         <Typography
           variant="h1"
           fontWeight="bold"
@@ -42,19 +43,29 @@ export const MobileHero = () => {
           Mais especialistas, menos filas: sua cidade inovando na saúde pública!
         </Typography>
 
-        <Button
-          component="a"
+        {/* Botão WhatsApp funcional */}
+        <a
           href="https://wa.me/554788992915"
           target="_blank"
           rel="noopener noreferrer"
-          variant="contained"
-          color="secondary"
-          sx={{ borderRadius: 4, px: 3 }}
+          style={{
+            display: "inline-block",
+            marginTop: "1rem",
+            padding: "12px 32px",
+            borderRadius: "12px",
+            backgroundColor: "#04D77B",
+            color: "#000C1E",
+            fontWeight: "bold",
+            fontStyle: "italic",
+            textDecoration: "none",
+            textAlign: "center",
+            fontSize: "1rem",
+          }}
         >
-          Saiba mais!
-        </Button>
+          Saiba mais
+        </a>
 
-        {/* Ícone e Médico */}
+        {/* Ícones e imagens */}
         <Image
           src="/icone-descomplica.png"
           alt="Ícone Descomplica"

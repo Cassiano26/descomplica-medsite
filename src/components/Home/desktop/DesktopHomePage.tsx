@@ -4,23 +4,6 @@ import { Box, Typography, Button, Stack } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 
-interface StatBoxProps {
-  target: number;
-  label: string;
-}
-
-const StatBox: React.FC<StatBoxProps> = ({ target, label }) => (
-  <Box textAlign="center" p={2}>
-    <Typography
-      variant="h3"
-      fontWeight="bold"
-      sx={{ fontStyle: "italic", color: "#04D77B", mb: 1 }}
-    >
-      {target}%
-    </Typography>
-    <Typography variant="body1">{label}</Typography>
-  </Box>
-);
 
 const steps = [
   { label: "Início da consulta", icon: "/logoquatro.png", top: "0%", left: "50%", transform: "translateX(-50%)", textOffset: { top: "-85px", left: "160px" } },
@@ -232,7 +215,8 @@ const DesktopHomePage: React.FC = () => {
     </Box>
   </Box>
 
-  <Box sx={{ px: 4, mb: { xs: 6, md: 10 } }}>
+<Box sx={{ px: 4, mb: { xs: 6, md: 10 } }}>
+  {/* Título */}
   <Typography
     variant="h5"
     sx={{
@@ -240,6 +224,7 @@ const DesktopHomePage: React.FC = () => {
       fontStyle: "italic",
       lineHeight: 1.3,
       textAlign: "left",
+      mb: 4,
     }}
   >
     <Box
@@ -253,96 +238,20 @@ const DesktopHomePage: React.FC = () => {
     </Box>{" "}
     que fazem a <br />diferença!
   </Typography>
+
+  {/* Imagem dos resultados reduzida */}
+  <Box sx={{ textAlign: "center" }}>
+    <Image
+      src="/resultadosdesk.png"
+      alt="Resultados"
+      width={720}  // 40% menor que 1200
+      height={360} // 40% menor que 600
+      style={{ width: "50%", height: "auto", borderRadius: 12 }}
+    />
+  </Box>
 </Box>
 
-<Box
-  sx={{
-    background: "linear-gradient(to bottom, #1f6d9bff, #189760ff)",
-    borderRadius: 3,
-    p: 4,
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gridTemplateRows: "1fr 1fr",
-    position: "relative",
-    textAlign: "center",
-    maxWidth: 600,
-    mx: "auto",
-    gap: 4,
-  }}
->
-  {/* Cruz branca central */}
-  <Box
-    sx={{
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      width: "1px",
-      height: "90%",
-      bgcolor: "white",
-      transform: "translate(-50%, -50%)",
-      zIndex: 1,
-    }}
-  />
-  <Box
-    sx={{
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      width: "90%",
-      height: "1px",
-      bgcolor: "white",
-      transform: "translate(-50%, -50%)",
-      zIndex: 1,
-    }}
-  />
-
-  {/* Quadrantes */}
-  {[
-    { value: "40%", text: "menos encaminhamentos" },
-    { value: "95%", text: "de aprovação entre os médicos" },
-    { value: "10%", text: "de economia no orçamento da saúde" },
-    { value: "50%", text: "menos exames desnecessários" },
-  ].map((item, i) => (
-    <Box key={i} textAlign="center" p={2} sx={{ zIndex: 2 }}>
-      <Typography
-        variant="h2"
-        fontWeight="bold"
-        sx={{ fontStyle: "italic", color: "white", mb: 1, fontSize: "2rem" }}
-      >
-        {item.value}
-      </Typography>
-      <Typography variant="body1" sx={{ color: "white" }}>
-        {item.text}
-      </Typography>
-    </Box>
-  ))}
 </Box>
-
-<Box textAlign="center" sx={{ mt: 8 }}>
-  <Button
-    component="a"
-    href="https://wa.me/554788992915"
-    target="_blank"
-    rel="noopener noreferrer"
-    variant="contained"
-    sx={{
-      borderRadius: 3,
-      backgroundColor: "#04D77B",
-      color: "#000C1E",
-      fontWeight: "bold",
-      fontStyle: "italic",
-      textTransform: "none",
-      px: 4,
-      py: 1.5,
-      fontSize: "1.1rem",
-      "&:hover": { backgroundColor: "#03c76f" },
-    }}
-  >
-    Entre já em contato!
-  </Button>
-</Box>
-</Box>
-
 
       {/* CTA IMAGE */}
 <Box sx={{ position: "relative", py: 12, bgcolor: "#000C1E" }}>

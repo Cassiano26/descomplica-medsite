@@ -12,20 +12,25 @@ const theme = createTheme({
 
     allVariants: { color: "#363636" },
 
-    body1: { fontSize: 16, fontWeight: 400 },
+    body1: {
+      fontSize: 16,
+      fontWeight: 400,
+      "& strong": { fontWeight: 700 },
+    },
+
     body2: { fontSize: 14, fontWeight: 400 },
 
     h1: {
-      fontFamily: "var(--font-proxima-nova-cond), Arial, sans-serif",
-      fontWeight: 700,
+      fontFamily: "var(--font-proxima-nova), Arial, sans-serif",
       fontSize: 32,
+      fontWeight: 700,
       "@media (min-width:600px)": { fontSize: 48 },
     },
 
     h2: {
-      fontFamily: "var(--font-proxima-nova-cond), Arial, sans-serif",
-      fontWeight: 700,
+      fontFamily: "var(--font-proxima-nova), Arial, sans-serif",
       fontSize: 24,
+      fontWeight: 700,
       "@media (min-width:600px)": { fontSize: 32 },
     },
 
@@ -37,17 +42,22 @@ const theme = createTheme({
     overline: { fontSize: 10, fontWeight: 900, textTransform: "uppercase" },
     button: { fontSize: 14, fontWeight: 600, textTransform: "none" },
   },
+
   palette: {
     primary: { light: "#e5e5ff", main: "#252552" },
     secondary: { light: "#fff2f2", main: "#D1224A" },
   },
+
   components: {
     MuiButton: {
       styleOverrides: {
         contained: {
           borderRadius: "8px",
           fontSize: "16px",
-          "@media (min-width:600px)": { padding: "8px 22px", fontSize: "0.9375rem" },
+          "@media (min-width:600px)": {
+            padding: "8px 22px",
+            fontSize: "0.9375rem",
+          },
         },
       },
     },
