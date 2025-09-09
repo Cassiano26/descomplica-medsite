@@ -41,13 +41,14 @@ export const MobileHomePage: React.FC = () => {
               sua cidade inovando na <br /> saúde pública!
             </Box>
           </Typography>
+        </Box>
 
           <Box textAlign="left">
            <Button variant="contained" sx={{ mt: 4, borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none" }} onClick={openWhatsApp}>
             Saiba mais
           </Button>
           </Box>
-        </Box>
+
 
         {/* Imagens Hero */}
         <Box sx={{ mt: -30, position: "relative", zIndex: 1 }}>

@@ -3,7 +3,7 @@
 import { Box, Typography, Button, Stack } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 
 const steps = [
   { label: "Início da consulta", icon: "/logoquatro.png", top: "0%", left: "50%", transform: "translateX(-50%)", textOffset: { top: "-85px", left: "160px" } },
@@ -15,6 +15,48 @@ const steps = [
   { label: "Dashboard para o gestor público", icon: "/logotres.png", top: "37%", left: "0%", transform: "translate(-20%, -50%)", textOffset: { top: "-70px", left: "-120px" } },
 ];
 
+// Agora export nomeado
+export function StepsAnimation() {
+  return (
+    <Box sx={{ position: "relative", width: "100%", height: "100vh" }}>
+      {steps.map((step, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: index * 0.5, duration: 0.6, ease: "easeOut" }}
+          style={{
+            position: "absolute",
+            top: step.top,
+            left: step.left,
+            transform: step.transform,
+            zIndex: 10,
+          }}
+        >
+          <Box
+            sx={{
+              bgcolor: "#5E17EB",
+              borderRadius: 2,
+              p: 2,
+              display: "flex",
+              alignItems: "center",
+              gap: 2,
+              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+              color: "white",
+              minWidth: "220px",
+            }}
+          >
+            <Image src={step.icon} alt={step.label} width={40} height={40} />
+            <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+              {step.label}
+            </Typography>
+          </Box>
+        </motion.div>
+      ))}
+    </Box>
+  );
+}
+   
 const DesktopHomePage: React.FC = () => {
   return (
     <Box sx={{ display: { xs: "none", md: "block" }, backgroundColor: "#000C1E", color: "white" }}>
@@ -144,11 +186,30 @@ const DesktopHomePage: React.FC = () => {
             </Box>
           ))}
         </Box>
-        <Box textAlign="center" sx={{ mt: 25 }}>
-          <Button variant="contained" sx={{ borderRadius: 3, backgroundColor: "#04D77B", color: "#000C1E", fontWeight: "bold", fontStyle: "italic", textTransform: "none", px: 4, py: 1.5, fontSize: "1.1rem", "&:hover": { backgroundColor: "#03c76f" } }}>
-            Entre já em contato!
-          </Button>
-        </Box>
+       <Box textAlign="center" sx={{ mt: 25 }}>
+  <Button
+    component="a"
+    href="https://wa.me/554788992915"
+    target="_blank"
+    rel="noopener noreferrer"
+    variant="contained"
+    sx={{
+      borderRadius: 3,
+      backgroundColor: "#04D77B",
+      color: "#000C1E",
+      fontWeight: "bold",
+      fontStyle: "italic",
+      textTransform: "none",
+      px: 4,
+      py: 1.5,
+      fontSize: "1.1rem",
+      "&:hover": { backgroundColor: "#03c76f" },
+    }}
+  >
+    Fale conosco
+  </Button>
+</Box>
+
       </Box>
 
             {/* RESULTADOS + IMAGENS */}
@@ -156,7 +217,7 @@ const DesktopHomePage: React.FC = () => {
   sx={{
     position: "relative",
     px: { md: 10, lg: 0 },
-    py: 8,
+    py: 2,
     color: "white",
     backgroundColor: "#000C1E",
     overflow: "hidden",
@@ -188,8 +249,8 @@ const DesktopHomePage: React.FC = () => {
     sx={{
       position: "relative",
       width: "100%",
-      height: { md: "300px", lg: "550px" },
-      mb: { xs: 6, md: 14 }, // margem só para separar a imagem
+      height: { md: "370px", lg: "620px" },
+      mb: { xs: 6, md: 10 }, // margem só para separar a imagem
     }}
   >
     <Box
@@ -215,7 +276,7 @@ const DesktopHomePage: React.FC = () => {
     </Box>
   </Box>
 
-<Box sx={{ px: 4, mb: { xs: 6, md: 10 } }}>
+<Box sx={{ px: 10, mb: { xs: 6, md: 12 } }}>
   {/* Título */}
   <Typography
     variant="h5"
@@ -224,7 +285,7 @@ const DesktopHomePage: React.FC = () => {
       fontStyle: "italic",
       lineHeight: 1.3,
       textAlign: "left",
-      mb: 4,
+      mb: 6,
     }}
   >
     <Box
@@ -244,12 +305,36 @@ const DesktopHomePage: React.FC = () => {
     <Image
       src="/resultadosdesk.png"
       alt="Resultados"
-      width={720}  // 40% menor que 1200
-      height={360} // 40% menor que 600
-      style={{ width: "50%", height: "auto", borderRadius: 12 }}
+      width={850}  // 40% menor que 1200
+      height={450} // 40% menor que 600
+      style={{ width: "60%", height: "auto", borderRadius: 10}}
     />
   </Box>
 </Box>
+<Box textAlign="center" sx={{ mt: 0 }}>
+  <Button
+    component="a"
+    href="https://wa.me/554788992915"
+    target="_blank"
+    rel="noopener noreferrer"
+    variant="contained"
+    sx={{
+      borderRadius: 3,
+      backgroundColor: "#04D77B",
+      color: "#000C1E",
+      fontWeight: "bold",
+      fontStyle: "italic",
+      textTransform: "none",
+      px: 4,
+      py: 1.5,
+      fontSize: "1.1rem",
+      "&:hover": { backgroundColor: "#03c76f" },
+    }}
+  >
+    Entre já em contato!
+  </Button>
+</Box>
+
 
 </Box>
 
@@ -318,91 +403,144 @@ const DesktopHomePage: React.FC = () => {
     </Box>
   </a>
 </Box>
-        {/* FOOTER */}
+ 
+ 
+ {/* FOOTER */}
 <Box
   sx={{
-    bgcolor: "#F5F5F5",
-    color: "#000C1E",
-    borderRadius: "20px 20px 0 0",
-    textAlign: "center",
-    px: { md: 8, lg: 12 },
-    py: 6,
-    display: "flex",
-    flexDirection: "column",
-    gap: 4,
-    mt: { xs: 8, md: 12 }, // margem superior do footer
-  }}
->
-  {/* Logo */}
-  <Box>
-    <Image
-      src="/icone-descomplicafooter.png"
-      alt="Logo Descomplica"
-      width={200}
-      height={50}
-      style={{ width: "200px", height: "auto", margin: "0 auto" }}
-    />
-  </Box>
-
-  {/* Bloco verde contato */}
-  <Box
-    sx={{
-      background: "linear-gradient(90deg, #2AD68D 0%, #17B978 100%)",
-      borderRadius: 2,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      px: 3,
-      py: 2,
-      flexWrap: "wrap",
-      gap: 2,
-    }}
-  >
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 1, textAlign: "left" }}>
-      <Typography variant="subtitle2" fontWeight="bold">CONTATO</Typography>
-      <Box display="flex" alignItems="center" gap={1}>
-        <Image src="/icone-whats.png" alt="WhatsApp" width={20} height={20} />
-        <Typography variant="body2">descomplicamedicinaagora@gmail.com</Typography>
-      </Box>
-      <Box display="flex" alignItems="center" gap={1}>
-        <Image src="/icone-telefone.png" alt="Telefone" width={20} height={20} />
-        <Typography variant="body2">(47) 98899-2915</Typography>
-      </Box>
-    </Box>
-
-    {/* Redes sociais */}
-    <Box sx={{ display: "flex", gap: 2 }}>
-      <Box sx={{ bgcolor: "#000C1E", borderRadius: 2, width: 50, height: 50, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <Image src="/icone-instagram.png" alt="Instagram" width={24} height={24} />
-      </Box>
-      <Box sx={{ bgcolor: "#000C1E", borderRadius: 2, width: 50, height: 50, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <Image src="/icone-linkedin.png" alt="LinkedIn" width={24} height={24} />
-      </Box>
-    </Box>
-  </Box>
-</Box>
-
-{/* Bloco branco das logos (full width com espaçamento lateral) */}
-<Box
-  sx={{
-    bgcolor: "white",
-    borderRadius: 0,
-    py: 2,
-    px: { xs: 2, md: 9, lg: 3 }, // espaço lateral alinhado ao restante do site
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
-    gap: { xs: 2, md: 4 },
-    flexWrap: "wrap",
     width: "100%",
+    bgcolor: "transparent",
+    mt: { xs: 4, md: 6 },
   }}
 >
-  <Image src="/icone-parana.png" alt="Governo do Paraná" width={180} height={100} />
-  <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={150} height={100} />
+  <Box
+    sx={{
+      bgcolor: "#F5F5F5",
+      color: "#000C1E",
+      borderRadius: "20px 20px 0 0",
+      textAlign: "center",
+      px: { xs: 3, md: 8, lg: 20 },
+      py: 9,
+      display: "flex",
+      flexDirection: "column",
+      gap: 6,
+      width: "70%",
+      maxWidth: 1440,
+    }}
+  >
+    {/* Logo */}
+    <Box>
+      <Image
+        src="/icone-descomplicafooter.png"
+        alt="Logo Descomplica"
+        width={250}
+        height={150}
+        style={{ width: "300px", height: "auto", margin: "0 auto" }}
+      />
+    </Box>
+
+    {/* CONTATO */}
+    <Typography variant="subtitle2" fontWeight="bold" sx={{ textAlign: "left" }}>
+      CONTATO
+    </Typography>
+
+    {/* Container bloco verde + redes sociais */}
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "space-between", // espaço entre bloco verde e redes sociais
+        alignItems: "flex-start",
+        flexWrap: { xs: "wrap", md: "nowrap" },
+        gap: 4,
+      }}
+    >
+      {/* Bloco verde contato */}
+      <Box
+        sx={{
+          background: "linear-gradient(90deg, #36d492ff 0%, #3ef5acff 60%)",
+          borderRadius: 2,
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          px: 4,
+          py: 2,
+          flexWrap: "wrap",
+          gap: 4,
+          width: { xs: "100%", md: "70%" }, // ocupa 70% no desktop
+        }}
+      >
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 1, textAlign: "left" }}>
+          <Box display="flex" alignItems="left" gap={1}>
+            <Image src="/icone-whats.png" alt="WhatsApp" width={20} height={20} />
+            <Typography variant="body2" sx={{ color: "white" }}>
+              descomplicamedicinaagora@gmail.com
+            </Typography>
+          </Box>
+          <Box display="flex" alignItems="left" gap={1}>
+            <Image src="/icone-telefone.png" alt="Telefone" width={20} height={20} />
+            <Typography variant="body2" sx={{ color: "white" }}>
+              (47) 98899-2915
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Redes sociais fora do bloco verde */}
+      <Box sx={{ display: "flex", gap: 2 }}>
+        <Box
+          sx={{
+            bgcolor: "#000C1E",
+            borderRadius: 2,
+            width: 70,
+            height: 70,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Image src="/icone-instagram.png" alt="Instagram" width={24} height={24} />
+        </Box>
+        <Box
+          sx={{
+            bgcolor: "#000C1E",
+            borderRadius: 2,
+            width: 70,
+            height: 70,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Image src="/icone-linkedin.png" alt="LinkedIn" width={24} height={24} />
+        </Box>
+      </Box>
+    </Box>
+
+    {/* Bloco branco das logos */}
+    <Box
+      sx={{
+        bgcolor: "white",
+        borderRadius: 2,
+        py: 2,
+        px: { xs: 2, md: 9, lg: 2 },
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: { xs: 2, md: 4 },
+        flexWrap: "wrap",
+        mt: 3, // sobe o bloco branco das logos
+        width: "60%",
+      }}
+    >
+      <Image src="/icone-parana.png" alt="Governo do Paraná" width={180} height={100} />
+      <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={130} height={100} />
+    </Box>
+  </Box>
 </Box>
 </Box>
 
-  
   );
 };
 
