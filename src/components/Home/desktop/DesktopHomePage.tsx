@@ -130,7 +130,7 @@ const DesktopHomePage: React.FC = () => {
 
       {/* COMO FUNCIONA SECTION */}
       <Box sx={{ textAlign: "center", py: 10, position: "relative" }}>
-        <Typography variant="h4" fontWeight="bold" mb={14} sx={{ fontStyle: "italic", color: "white" }}>Como funciona?</Typography>
+        <Typography variant="h2" fontWeight="bold" mb={14} sx={{ fontStyle: "italic", color: "white" }}>Como funciona?</Typography>
         <Box sx={{ position: "relative", width: 500, height: 500, mx: "auto" }}>
           <Image src="/circulo-fundo.png" alt="Fluxo da consulta" fill style={{ objectFit: "contain" }} />
           {steps.map((step, i) => (
@@ -209,61 +209,68 @@ const DesktopHomePage: React.FC = () => {
     />
   </Box>
 
-  {/* Imagem da equipe médica */}
-  <Box
-    sx={{
-      position: "relative",
-      width: "100%",
-      height: { md: "370px", lg: "620px" },
-      mb: { xs: 6, md: 10 }, // margem só para separar a imagem
-    }}
+{/* Imagem da equipe médica */}
+<Box
+  sx={{
+    position: "relative",
+    width: "100%",
+    height: { md: "370px", lg: "620px" },
+    mb: { xs: 6, md: 10 },
+  }}
+>
+  <motion.div
+    initial={{ opacity: 0, x: 100 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, delay: 0.4 }} // entra depois do texto
+    viewport={{ once: true }}
+    style={{ position: "absolute", right: 0, bottom: 0, height: "100%" }}
   >
-    <Box
-      sx={{
-        position: "absolute",
-        right: 0, // cola na borda direita
-        bottom: 0, // alinha base da imagem ao container
+    <Image
+      src="/medicos-02.png"
+      alt="Equipe médica adicional"
+      width={800}
+      height={1000}
+      style={{
+        width: "auto",
         height: "100%",
+        objectFit: "contain",
+        display: "block",
       }}
-    >
-      <Image
-        src="/medicos-02.png"
-        alt="Equipe médica adicional"
-        width={800}
-        height={1000}
-        style={{
-          width: "auto",
-          height: "100%",
-          objectFit: "contain",
-          display: "block",
-        }}
-      />
-    </Box>
-  </Box>
+    />
+  </motion.div>
+</Box>
 
-<Box sx={{ px: 10, mb: { xs: 6, md: 12 } }}>
-  {/* Título */}
-  <Typography
-    variant="h5"
-    sx={{
-      color: "#FFFFFF",
-      fontStyle: "italic",
-      lineHeight: 1.3,
-      textAlign: "left",
-      mb: 6,
-    }}
+{/* Texto com motion */}
+<Box sx={{ px: 10, mb: { xs: 6, md: 10 } }}>
+  <motion.div
+    initial={{ opacity: 0, y: -50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, delay: 0 }} // aparece primeiro
+    viewport={{ once: true }}
   >
-    <Box
-      component="span"
+    <Typography
+      variant="h5"
       sx={{
-        fontWeight: "bold",
-        pr: 0,
+        color: "#FFFFFF",
+        fontStyle: "italic",
+        lineHeight: 1.3,
+        textAlign: "left",
+        mb: 10,
+        px: 30,
       }}
     >
-      Resultados
-    </Box>{" "}
-    que fazem a <br />diferença!
-  </Typography>
+      <Box
+        component="span"
+        sx={{
+          fontWeight: "bold",
+          pr: 0,
+        }}
+      >
+        Resultados
+      </Box>{" "}
+      que fazem a <br />diferença!
+    </Typography>
+  </motion.div>
 
   {/* Imagem dos resultados reduzida */}
   <Box sx={{ textAlign: "center" }}>
@@ -391,7 +398,7 @@ const DesktopHomePage: React.FC = () => {
       flexDirection: "column",
       gap: 3,
       width: "100%",
-      maxWidth: 1300,
+      maxWidth: 1200,
     }}
   >
     {/* Logo */}
@@ -406,7 +413,7 @@ const DesktopHomePage: React.FC = () => {
     </Box>
 
     {/* CONTATO */}
-    <Typography variant="h3" fontWeight="bold" sx={{ textAlign: "left", px: 64 }}>
+    <Typography variant="h3" fontWeight="bold" sx={{ textAlign: "left", px: 57 }}>
       CONTATO
     </Typography>
 
@@ -423,15 +430,15 @@ const DesktopHomePage: React.FC = () => {
       {/* Bloco verde contato */}
       <Box
         sx={{
-          background: "linear-gradient(90deg, #36d492ff 0%, #3ef5acff 60%)",
+          background: "linear-gradient(90deg, #36d492ff 0%, #3ef5acff 50%)",
           borderRadius: 3,
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-end",
-          px: 2,
+          px: 1,
           py: 2,
-          gap: 0,
-          width: { xs: "100%", md: "60%" },
+          gap: 2,
+          width: { xs: "100%", md: "100%" },
         }}
       >
  {/* Contato (Email + WhatsApp) */}
@@ -462,8 +469,8 @@ const DesktopHomePage: React.FC = () => {
       bgcolor: "#000C1E",
       borderTopLeftRadius: 12,
       borderBottomLeftRadius: 12,
-      width: 70,
-      height: 70,
+      width: 80,
+      height: 80,
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -476,11 +483,12 @@ const DesktopHomePage: React.FC = () => {
       bgcolor: "#000C1E",
       borderTopRightRadius: 10,
       borderBottomRightRadius: 10,
-      width: 70,
-      height: 70,
+      width: 80,
+      height: 80,
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      
     }}
   >
     <Image src="/icone-linkedin.png" alt="LinkedIn" width={30} height={30} />
@@ -502,12 +510,12 @@ const DesktopHomePage: React.FC = () => {
     gap: { xs: 2, md: 4 },
     mt: 10,
     mx: "auto",          // centraliza horizontalmente
-    width: { xs: "90%", md: "60%", lg: "50%" }, // ocupa menos largura
+    width: { xs: "90%", md: "30%", lg: "30%" }, // ocupa menos largura
   }}
 >
   <Image src="/icone-parana.png" alt="Governo do Paraná" width={180} height={100} />
   <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={130} height={100} />
-  <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={130} height={100} />
+
 </Box>
 </Box>
 </Box>
