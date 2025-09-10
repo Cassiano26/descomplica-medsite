@@ -23,7 +23,7 @@ export const MobileHero = () => {
           position: "absolute",
           top: 0,
           left: 0,
-          zIndex: -1,
+          zIndex: -1, // fica atrás de tudo
           width: "100%",
           height: "auto",
         }}
@@ -60,6 +60,8 @@ export const MobileHero = () => {
             textDecoration: "none",
             textAlign: "center",
             fontSize: "1rem",
+            position: "relative", // garante que fica acima do fundo
+            zIndex: 2,            // garante clique
           }}
         >
           Saiba mais

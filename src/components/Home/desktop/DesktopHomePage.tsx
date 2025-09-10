@@ -515,6 +515,7 @@ const DesktopHomePage: React.FC = () => {
 >
   <Image src="/icone-parana.png" alt="Governo do Paraná" width={180} height={100} />
   <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={130} height={100} />
+  <Image src="/ibis.png" alt="certificado" width={130} height={100} />
 
 </Box>
 </Box>
