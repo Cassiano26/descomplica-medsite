@@ -12,7 +12,7 @@ const steps = [
   { label: "Recebimento de apontamentos do especialista", icon: "/logoum.png", top: "82%", left: "60%", transform: "translate(-50%, -20%)", textOffset: { top: "30px", left: "60px" } },
   { label: "Direcionamento do paciente", icon: "/logosete.png", top: "83%", left: "15%", transform: "translate(-80%, -78%)", textOffset: { top: "30px", left: "-60px" } },
   { label: "Avaliação da consultoria", icon: "/logodois.png", top: "60%", left: "-5%", transform: "translate(-70%, -100%)", textOffset: { top: "-50px", left: "-120px" } },
-  { label: "Dashboard para o gestor público", icon: "/logotres.png", top: "20%", left: "0%", transform: "translate(-20%, -50%)", textOffset: { top: "-70px", left: "-120px" } },
+  { label: "Dashboard para o gestor público", icon: "/dashboardesk.png", top: "20%", left: "0%", transform: "translate(-20%, -50%)", textOffset: { top: "-70px", left: "-120px" } },
 ];
 
 const DesktopHomePage: React.FC = () => {

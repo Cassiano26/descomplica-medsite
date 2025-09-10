@@ -36,6 +36,7 @@ const theme = createTheme({
 
     h3: { fontSize: 20, fontWeight: 600 },
     h4: { fontSize: 18, fontWeight: 700 },
+    h5: { fontSize: 16, fontWeight: 700 },
     subtitle1: { fontSize: 16, fontWeight: 500 },
     subtitle2: { fontSize: 14, fontWeight: 600 },
     caption: { fontSize: 12, fontWeight: 400 },

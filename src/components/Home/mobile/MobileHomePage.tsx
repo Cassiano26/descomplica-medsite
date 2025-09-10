@@ -364,7 +364,7 @@ export const MobileHomePage: React.FC = () => {
             />
           </Box>
 
-          <Typography variant="h6" fontWeight={700} sx={{ textAlign: "left", mb: 1 }}>
+          <Typography variant="h3" fontWeight={700} sx={{ textAlign: "left", mb: 1 }}>
             CONTATO
           </Typography>
 
@@ -379,14 +379,14 @@ export const MobileHomePage: React.FC = () => {
             spacing={1}
           >
             <Box display="flex" alignItems="center" gap={1}>
-              <Image src="/icone-telefone.png" alt="WhatsApp" width={20} height={20} />
-              <Typography variant="body2" fontWeight={400}>
+              <Image src="/icone-telefone.png" alt="WhatsApp" width={20} height={15} />
+              <Typography variant="h5" fontWeight={300}>
                 descomplicamedicinaagora@gmail.com
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" gap={1}>
               <Image src="/icone-whats.png" alt="Telefone" width={20} height={20} />
-              <Typography variant="body2" fontWeight={400}>
+              <Typography variant="h5" fontWeight={400}>
                 (47) 98899-2915
               </Typography>
             </Box>
@@ -397,18 +397,18 @@ export const MobileHomePage: React.FC = () => {
               sx={{
                 backgroundColor: "black",
                 borderRadius: "12px",
-                px: 2,
-                py: 2,
+                px: 1,
+                py: 1,
                 display: "flex",
                 gap: 3,
                 alignItems: "center",
               }}
             >
               <Link href="https://www.instagram.com/appdescomplicamedicina/" target="_blank" rel="noopener">
-                <Image src="/icone-instagram.png" alt="Instagram" width={60} height={60} />
+                <Image src="/icone-instagram.png" alt="Instagram" width={40} height={40} />
               </Link>
               <Link href="https://www.linkedin.com/company/descomplica-medicina/" target="_blank" rel="noopener">
-                <Image src="/icone-linkedin.png" alt="LinkedIn" width={60} height={60} />
+                <Image src="/icone-linkedin.png" alt="LinkedIn" width={40} height={40} />
               </Link>
             </Box>
           </Stack>
@@ -424,7 +424,7 @@ export const MobileHomePage: React.FC = () => {
               flexWrap: "nowrap",
             }}
           >
-            <Image src="/icone-parana.png" alt="Governo do Paraná" width={130} height={60} />
+            <Image src="/icone-parana.png" alt="Governo do Paraná" width={120} height={70} />
             <Image src="/sbis.jpeg" alt="Certificado SBIS" width={100} height={40} />
             <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={110} height={80} />
           </Box>
