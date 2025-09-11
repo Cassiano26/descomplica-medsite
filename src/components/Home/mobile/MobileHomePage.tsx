@@ -380,13 +380,13 @@ export const MobileHomePage: React.FC = () => {
           >
             <Box display="flex" alignItems="center" gap={1}>
               <Image src="/icone-telefone.png" alt="WhatsApp" width={20} height={15} />
-              <Typography variant="h5" fontWeight={300}>
+              <Typography variant="h6" fontWeight={300}>
                 descomplicamedicinaagora@gmail.com
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" gap={1}>
               <Image src="/icone-whats.png" alt="Telefone" width={20} height={20} />
-              <Typography variant="h5" fontWeight={400}>
+              <Typography variant="h6" fontWeight={400}>
                 (47) 98899-2915
               </Typography>
             </Box>
