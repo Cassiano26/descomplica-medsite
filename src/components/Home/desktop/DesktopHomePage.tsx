@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Link } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -181,7 +181,6 @@ const DesktopHomePage: React.FC = () => {
     
     
 
-                {/* COMO FUNCIONA SECTION */}
 <Box sx={{ textAlign: "center", py: 10, position: "relative" }}>
   <Typography
     variant="h2"
@@ -196,9 +195,8 @@ const DesktopHomePage: React.FC = () => {
     {/* CÍRCULO DE FUNDO */}
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.3 }}
       style={{ position: "absolute", inset: 0 }}
     >
       <Image
@@ -213,14 +211,13 @@ const DesktopHomePage: React.FC = () => {
     {steps.map((step, i) => (
       <motion.div
         key={i}
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, rotate: -90 }} // começa girado
+        animate={{ opacity: 1, rotate: 0 }} // gira para posição normal
         transition={{
-          delay: 0.8 + i * 0.3, // começa após o círculo entrar
+          delay: 0.8 + i * 0.3, // sequencia um por um
           duration: 0.6,
           ease: "easeOut",
         }}
-        viewport={{ once: true, amount: 0.3 }}
         whileHover={{ y: -10 }}
         style={{
           position: "absolute",
@@ -269,6 +266,8 @@ const DesktopHomePage: React.FC = () => {
       </motion.div>
     ))}
   </Box>
+
+
 
         <Box textAlign="center" sx={{ mt: 25 }}>
           <Button
@@ -374,7 +373,7 @@ const DesktopHomePage: React.FC = () => {
         lineHeight: 1.3,
         textAlign: "left",
         mb: 10,
-        px: 30,
+        px: 33,
       }}
     >
       <Box
@@ -613,7 +612,9 @@ const DesktopHomePage: React.FC = () => {
         justifyContent: "center",
       }}
     >
+       <Link href="https://www.instagram.com/appdescomplicamedicina/" target="_blank" rel="noopener">
       <Image src="/icone-instagram.png" alt="Instagram" width={30} height={30} />
+      </Link>
     </Box>
     <Box
       sx={{
@@ -626,7 +627,9 @@ const DesktopHomePage: React.FC = () => {
         justifyContent: "center",
       }}
     >
+       <Link href="https://www.linkedin.com/company/descomplica-medicina/" target="_blank" rel="noopener">
       <Image src="/icone-linkedin.png" alt="LinkedIn" width={30} height={30} />
+      </Link>
     </Box>
   </Box>
 </Box>
