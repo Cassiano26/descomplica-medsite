@@ -2,6 +2,7 @@
 
 import { Typography, Box } from "@mui/material";
 import React from "react";
+import { motion } from "framer-motion";
 
 const AboutSectionDesktop: React.FC = () => {
   return (
@@ -16,16 +17,28 @@ const AboutSectionDesktop: React.FC = () => {
       }}
     >
       {/* Imagem */}
-      <Box sx={{ flex: 1, textAlign: "center" }}>
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        style={{ flex: 1, textAlign: "center" }}
+      >
         <img
           src="/computador-01.png"
           alt="Dashboard IA"
           style={{ maxWidth: 500, width: "100%" }}
         />
-      </Box>
+      </motion.div>
 
       {/* Texto */}
-      <Box sx={{ flex: 1 }}>
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        style={{ flex: 1 }}
+      >
         <Typography variant="h5" gutterBottom>
           Redução de custos e filas com triagens médicas inteligentes e comprovadas.
         </Typography>
@@ -34,7 +47,7 @@ const AboutSectionDesktop: React.FC = () => {
         </Typography>
         <Typography variant="body1" gutterBottom>
           A <b>Descomplica Medicina</b> utiliza inteligência artificial generativa aliada à
-          expertise médica para otimizar o processo de encaminhamento. O resultado?
+          expertise médica para otimizar o processo de encaminhamento. O resultado?{" "}
           Redução de filas, economia de recursos e mais dignidade no atendimento.
         </Typography>
         <Typography variant="body1" mt={2}>
@@ -43,7 +56,7 @@ const AboutSectionDesktop: React.FC = () => {
           baseadas em dados — tudo com foco na eficiência do sistema e no uso responsável
           dos recursos públicos.
         </Typography>
-      </Box>
+      </motion.div>
     </Box>
   );
 };

@@ -40,11 +40,15 @@ const DesktopHomePage: React.FC = () => {
           {/* Texto Hero */}
           <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} style={{ flex: 1 }}>
             <Box sx={{ color: "white", pr: { md: 2, lg: 6 } }}>
-              <Image src="/descomplica-logo.png" alt="Descomplica" width={200} height={40} priority />
+              {/* LOGO ajustada para cima */}
+              <Box sx={{ mb: 15 }}>
+                <Image src="/descomplica-logo.png" alt="Descomplica" width={200} height={40} priority />
+              </Box>
+
               <Typography variant="h3" sx={{ color: "rgba(255,255,255,0.88)", fontWeight: 800, fontStyle: "italic", lineHeight: 1.05, fontSize: { md: "36px", lg: "44px" }, mb: 2 }}>
                 Conectando a saúde pública ao futuro!
               </Typography>
-              <Typography variant="h6" sx={{ color: "rgba(255,255,255,0.88)", mb: 3, fontSize: { md: "16px", lg: "18px" } }}>
+              <Typography variant="body1" sx={{ color: "rgba(255,255,255,0.88)", mb: 3, fontSize: { md: "16px", lg: "18px" } }}>
                 Mais especialistas, menos filas:{" "}
                 <Box component="span" sx={{ fontStyle: "italic", fontWeight: 700 }}>
                   sua cidade inovando na saúde pública!
@@ -86,23 +90,61 @@ const DesktopHomePage: React.FC = () => {
 
       {/* ABOUT SECTION */}
       <Box sx={{ position: "relative", px: { md: 12, lg: 16 }, py: 8, display: "flex", flexDirection: "column", gap: 6, backgroundColor: "#000C1E", overflow: "hidden" }}>
-        <Box sx={{ position: "absolute", bottom: "-20%", right: "0%", width: { xs: "120%", md: "30%" }, height: "auto", opacity: 1, zIndex: 0 }}>
+        
+        {/* Ícone de fundo animado */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          style={{ position: "absolute", bottom: "-20%", right: "0%", width: "30%", height: "auto", zIndex: 0 }}
+        >
           <Image src="/icone-descomplica.png" alt="Ícone Descomplica" width={400} height={400} style={{ width: "100%", height: "auto" }} />
-        </Box>
+        </motion.div>
+
         <Box sx={{ position: "relative", zIndex: 1 }}>
-          <Box sx={{ maxWidth: 800, mx: "auto", textAlign: "left" }}>
-            <Typography variant="h5" sx={{ color: "rgba(255,255,255,0.88)", lineHeight: 1.5, textAlign: "left" }}>
-              Redução de custos e filas com triagens médicas inteligentes e comprovadas.{" "}
-              <Box component="span" sx={{ fontStyle: "italic", fontWeight: "bold" }}>
-                A solução que transforma o atendimento público com inteligência artificial.
-              </Box>
-            </Typography>
-          </Box>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 6, justifyContent: "center", flexWrap: "wrap", mt: 6 }}>
-            <Box sx={{ flex: 1, minWidth: 300, textAlign: "center" }}>
-              <Image src="/tela.png" alt="Dashboard IA" width={600} height={400} style={{ width: "100%", height: "auto" }} />
+          
+          {/* Texto inicial */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <Box sx={{ maxWidth: 800, mx: "auto", textAlign: "left" }}>
+              <Typography
+                variant="h5"
+                fontWeight={400}
+                gutterBottom
+                sx={{ color: "rgba(255,255,255,0.88)", lineHeight: 1.6, mb: 4 }}
+              >
+                Redução de custos e filas com triagens médicas inteligentes e comprovadas.{" "}
+                <Box component="span" sx={{ fontStyle: "italic", fontWeight: 700 }}>
+                  A solução que transforma o atendimento público com inteligência artificial.
+                </Box>
+              </Typography>
             </Box>
-            <Box sx={{ flex: 1, minWidth: 300 }}>
+          </motion.div>
+
+          {/* Bloco imagem + texto */}
+          <Box sx={{ display: "flex", alignItems: "center", gap: 6, justifyContent: "center", flexWrap: "wrap", mt: 6 }}>
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              style={{ flex: 1, minWidth: 300, textAlign: "center" }}
+            >
+              <Image src="/tela.png" alt="Dashboard IA" width={600} height={400} style={{ width: "100%", height: "auto" }} />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true }}
+              style={{ flex: 1, minWidth: 300 }}
+            >
               <Typography variant="body1" sx={{ color: "rgba(255,255,255,0.88)" }}>
                 A <b>Descomplica Medicina</b> utiliza inteligência artificial
                 generativa aliada à expertise médica para otimizar o processo de
@@ -112,45 +154,121 @@ const DesktopHomePage: React.FC = () => {
                   atendimento.
                 </Box>
               </Typography>
+            </motion.div>
+          </Box>
+
+          {/* Texto final */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <Box sx={{ textAlign: "center", maxWidth: 800, mx: "auto", mt: 6 }}>
+              <Typography variant="body1" sx={{ color: "rgba(255,255,255,0.88)" }}>
+                Nossa plataforma oferece um{" "}
+                <Box component="span" sx={{ fontStyle: "italic", fontWeight: "bold" }}>
+                  dashboard em tempo real
+                </Box>
+                , que permite ao gestor visualizar indicadores de desempenho, identificar
+                gargalos e tomar decisões baseadas em dados — tudo com foco na eficiência
+                do sistema e no uso responsável dos recursos públicos.
+              </Typography>
             </Box>
-          </Box>
-          <Box sx={{ textAlign: "center", maxWidth: 800, mx: "auto", mt: 6 }}>
-            <Typography variant="body1" sx={{ color: "rgba(255,255,255,0.88)" }}>
-              Nossa plataforma oferece um{" "}
-              <Box component="span" sx={{ fontStyle: "italic", fontWeight: "bold" }}>
-                dashboard em tempo real
-              </Box>
-              , que permite ao gestor visualizar indicadores de desempenho, identificar
-              gargalos e tomar decisões baseadas em dados — tudo com foco na eficiência
-              do sistema e no uso responsável dos recursos públicos.
-            </Typography>
-          </Box>
+          </motion.div>
         </Box>
       </Box>
+    
+    
 
-      {/* COMO FUNCIONA SECTION */}
-      <Box sx={{ textAlign: "center", py: 10, position: "relative" }}>
-        <Typography variant="h2" fontWeight="bold" mb={14} sx={{ fontStyle: "italic", color: "white" }}>Como funciona?</Typography>
-        <Box sx={{ position: "relative", width: 500, height: 500, mx: "auto" }}>
-          <Image src="/circulo-fundo.png" alt="Fluxo da consulta" fill style={{ objectFit: "contain" }} />
-          {steps.map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.5, duration: 0.6, ease: "easeOut" }}
-              whileHover={{ y: -10 }}
-              style={{ position: "absolute", top: step.top, left: step.left, transform: step.transform, display: "flex", flexDirection: "column", alignItems: "center", width: 140 }}
-            >
-              <Box sx={{ width: 60, height: 60, borderRadius: "50%", background: "white", display: "flex", alignItems: "center", justifyContent: "center", mb: 1, boxShadow: "0 4px 10px rgba(0,0,0,0.2)" }}>
-                <Image src={step.icon} alt={step.label} width={40} height={40} />
-              </Box>
-              <Typography sx={{ background: "#4D0DFF", color: "white", borderRadius: "8px", px: 1.5, py: 0.5, fontSize: "0.8rem", fontWeight: 500, textAlign: "center", position: "relative", top: step.textOffset.top, left: step.textOffset.left }}>
-                {step.label}
-              </Typography>
-            </motion.div>
-          ))}
+                {/* COMO FUNCIONA SECTION */}
+<Box sx={{ textAlign: "center", py: 10, position: "relative" }}>
+  <Typography
+    variant="h2"
+    fontWeight="bold"
+    mb={14}
+    sx={{ fontStyle: "italic", color: "white" }}
+  >
+    Como funciona?
+  </Typography>
+
+  <Box sx={{ position: "relative", width: 500, height: 500, mx: "auto" }}>
+    {/* CÍRCULO DE FUNDO */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+      style={{ position: "absolute", inset: 0 }}
+    >
+      <Image
+        src="/circulo-fundo.png"
+        alt="Fluxo da consulta"
+        fill
+        style={{ objectFit: "contain" }}
+      />
+    </motion.div>
+
+    {/* ÍCONES */}
+    {steps.map((step, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 0.8 + i * 0.3, // começa após o círculo entrar
+          duration: 0.6,
+          ease: "easeOut",
+        }}
+        viewport={{ once: true, amount: 0.3 }}
+        whileHover={{ y: -10 }}
+        style={{
+          position: "absolute",
+          top: step.top,
+          left: step.left,
+          transform: step.transform,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: 140,
+        }}
+      >
+        <Box
+          sx={{
+            width: 60,
+            height: 60,
+            borderRadius: "50%",
+            background: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            mb: 1,
+            boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+          }}
+        >
+          <Image src={step.icon} alt={step.label} width={40} height={40} />
         </Box>
+
+        <Typography
+          sx={{
+            background: "#4D0DFF",
+            color: "white",
+            borderRadius: "8px",
+            px: 1.5,
+            py: 0.5,
+            fontSize: "0.8rem",
+            fontWeight: 500,
+            textAlign: "center",
+            position: "relative",
+            top: step.textOffset.top,
+            left: step.textOffset.left,
+          }}
+        >
+          {step.label}
+        </Typography>
+      </motion.div>
+    ))}
+  </Box>
 
         <Box textAlign="center" sx={{ mt: 25 }}>
           <Button
@@ -249,7 +367,7 @@ const DesktopHomePage: React.FC = () => {
     viewport={{ once: true }}
   >
     <Typography
-      variant="h5"
+      variant="h2"
       sx={{
         color: "#FFFFFF",
         fontStyle: "italic",
@@ -417,84 +535,105 @@ const DesktopHomePage: React.FC = () => {
       CONTATO
     </Typography>
 
-    {/* Container bloco verde + redes sociais */}
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "flex-start",
-        flexWrap: { xs: "wrap", md: "nowrap" },
-        gap: 4,
-      }}
-    >
-      {/* Bloco verde contato */}
-      <Box
-        sx={{
-          background: "linear-gradient(90deg, #36d492ff 0%, #3ef5acff 50%)",
-          borderRadius: 3,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-end",
-          px: 1,
-          py: 2,
-          gap: 2,
-          width: { xs: "100%", md: "100%" },
-        }}
-      >
- {/* Contato (Email + WhatsApp) */}
-<Box display="flex" flexDirection="column" alignItems="flex-start" gap={2}>
-  {/* Email */}
-  <Box display="flex" alignItems="center" gap={1}>
+    {/* Container flex do bloco verde + redes sociais */}
+<Box
+  sx={{
+    display: "flex",
+    flexWrap: { xs: "wrap", md: "nowrap" },
+    gap: 5, // espaço entre o bloco verde e o bloco de redes sociais
+    alignItems: "flex-start",
+  }}
+>
+{/* Bloco verde contato */}
+<Box
+  sx={{
+    background: "linear-gradient(90deg, #36d492ff 0%, #3ef5acff 50%)",
+    borderRadius: 3,
+    position: "relative",
+    width: { xs: "100%", md: "60%" },
+    height: 90, // altura menor que antes (era 150)
+    px: 3,
+    py: 0,
+  }}
+>
+  {/* Ícone + email */}
+  <Box
+    sx={{
+      position: "absolute",
+      top: 15, // ajustei um pouco para combinar com a altura menor
+      left: 20,
+      display: "flex",
+      alignItems: "center",
+      gap: 3,
+      px: 54, // remover padding extra evita quebra de linha
+    }}
+  >
     <Image src="/icone-telefone.png" alt="Email" width={20} height={15} />
-    <Typography variant="body2" sx={{ color: "white" }}>
+    <Typography variant="body2" sx={{ color: "white", whiteSpace: "nowrap" }}>
       descomplicamedicinaagora@gmail.com
     </Typography>
   </Box>
 
-  {/* WhatsApp */}
-  <Box display="flex" alignItems="center" gap={1}>
+  {/* Ícone + WhatsApp */}
+  <Box
+    sx={{
+      position: "absolute",
+      top: 50,
+      left: 20,
+      display: "flex",
+      alignItems: "center",
+      gap: 3,
+      px: 54,
+    }}
+  >
     <Image src="/icone-whats.png" alt="WhatsApp" width={20} height={20} />
-    <Typography variant="body2" sx={{ color: "white" }}>
+    <Typography variant="body2" sx={{ color: "white", whiteSpace: "nowrap" }}>
       (47) 98899-2915
     </Typography>
   </Box>
 </Box>
+
+
+  {/* Bloco preto redes sociais */}
+  <Box
+    sx={{
+      display: "flex",
+      gap: 0,
+      ml: 1, // ajuste aqui a distância horizontal do bloco verde
+    }}
+  >
+    <Box
+      sx={{
+        bgcolor: "#000C1E",
+        borderRadius: "12px 0 0 12px",
+        width: 80,
+        height: 80,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Image src="/icone-instagram.png" alt="Instagram" width={30} height={30} />
+    </Box>
+    <Box
+      sx={{
+        bgcolor: "#000C1E",
+        borderRadius: "0 12px 12px 0",
+        width: 80,
+        height: 80,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Image src="/icone-linkedin.png" alt="LinkedIn" width={30} height={30} />
+    </Box>
+  </Box>
 </Box>
 
 
-     {/* Redes sociais fora do bloco verde */}
-<Box sx={{ display: "flex", ml: 10, px: 12 }}> {/* puxa para a esquerda */}
-  <Box
-    sx={{
-      bgcolor: "#000C1E",
-      borderTopLeftRadius: 12,
-      borderBottomLeftRadius: 12,
-      width: 80,
-      height: 80,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    }}
-  >
-    <Image src="/icone-instagram.png" alt="Instagram" width={30} height={30} />
-  </Box>
-  <Box
-    sx={{
-      bgcolor: "#000C1E",
-      borderTopRightRadius: 10,
-      borderBottomRightRadius: 10,
-      width: 80,
-      height: 80,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      
-    }}
-  >
-    <Image src="/icone-linkedin.png" alt="LinkedIn" width={30} height={30} />
-  </Box>
-</Box>
-</Box>
+  
+
 
 
 {/* Bloco branco das logos */}
@@ -510,12 +649,13 @@ const DesktopHomePage: React.FC = () => {
     gap: { xs: 2, md: 4 },
     mt: 10,
     mx: "auto",          // centraliza horizontalmente
-    width: { xs: "90%", md: "30%", lg: "30%" }, // ocupa menos largura
+    width: { xs: "90%", md: "30%", lg: "35%" }, // ocupa menos largura
   }}
 >
-  <Image src="/icone-parana.png" alt="Governo do Paraná" width={180} height={100} />
-  <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={130} height={100} />
-  <Image src="/ibis.png" alt="certificado" width={130} height={100} />
+  <Image src="/icone-parana.png" alt="Governo do Paraná" width={150} height={80} />
+  <Image src="/sbis.jpeg" alt="certificado" width={170} height={60} />
+  <Image src="/icone-inovador.png" alt="Paraná Anjo Inovador" width={140} height={110} />
+  
 
 </Box>
 </Box>
