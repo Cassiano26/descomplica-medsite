@@ -179,9 +179,8 @@ const DesktopHomePage: React.FC = () => {
         </Box>
       </Box>
     
-    
 
-<Box sx={{ textAlign: "center", py: 10, position: "relative" }}>
+ <Box sx={{ textAlign: "center", py: 10, position: "relative" }}>
   <Typography
     variant="h2"
     fontWeight="bold"
@@ -195,8 +194,9 @@ const DesktopHomePage: React.FC = () => {
     {/* CÍRCULO DE FUNDO */}
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.5 }}
       style={{ position: "absolute", inset: 0 }}
     >
       <Image
@@ -211,13 +211,14 @@ const DesktopHomePage: React.FC = () => {
     {steps.map((step, i) => (
       <motion.div
         key={i}
-        initial={{ opacity: 0, rotate: -90 }} // começa girado
-        animate={{ opacity: 1, rotate: 0 }} // gira para posição normal
+        initial={{ opacity: 0, rotate: -90 }}
+        whileInView={{ opacity: 1, rotate: 0 }}
         transition={{
-          delay: 0.8 + i * 0.3, // sequencia um por um
+          delay: 0.5 + i * 0.3, // sequencia um por um
           duration: 0.6,
           ease: "easeOut",
         }}
+        viewport={{ once: true, amount: 0.5 }}
         whileHover={{ y: -10 }}
         style={{
           position: "absolute",
@@ -266,8 +267,6 @@ const DesktopHomePage: React.FC = () => {
       </motion.div>
     ))}
   </Box>
-
-
 
         <Box textAlign="center" sx={{ mt: 25 }}>
           <Button
