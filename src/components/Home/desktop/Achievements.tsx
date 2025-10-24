@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function Achievements() {
   return (
     <>
-                {/* RESULTADOS + IMAGENS */}
+{/* RESULTADOS + IMAGENS */}
 <Box
   sx={{
     position: "relative",
