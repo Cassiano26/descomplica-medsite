@@ -59,7 +59,7 @@ export default function Achievements() {
         lineHeight: 1.3,
         textAlign: "left",
         mb: 10,
-       
+                  
       }}
     >
       <Box
